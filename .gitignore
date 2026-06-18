@@ -15,7 +15,6 @@ pantheraa/node_modules/
 pantheraa/composer.phar
 pantheraa/.phpunit.result.cache
 pantheraa/database/*.sqlite
-pantheraa/database/*.sql
 pantheraa/storage/logs/*.log
 
 # (pantheraa/.gitignore also covers vendor, node_modules, .env, *.log, storage keys)
