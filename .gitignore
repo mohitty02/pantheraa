@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Local dev / deploy artifacts
+*.tar.gz
+/prod.env
+server.php
+
+# Laravel app: never commit secrets, deps or local DB
+.env
+pantheraa/.env
+pantheraa/vendor/
+pantheraa/node_modules/
+pantheraa/composer.phar
+pantheraa/.phpunit.result.cache
+pantheraa/database/*.sqlite
+pantheraa/database/*.sql
+pantheraa/storage/logs/*.log
+
+# (pantheraa/.gitignore also covers vendor, node_modules, .env, *.log, storage keys)

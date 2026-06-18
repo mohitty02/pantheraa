@@ -1,0 +1,54 @@
+@php $services = config('site.services'); @endphp
+
+<section id="services" class="section">
+    <div class="container-px">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <span class="kicker">What we do</span>
+            <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl">
+                One pack. <span class="text-gradient-flame">Every growth channel.</span>
+            </h2>
+            <p class="mt-4 text-white/60">
+                Search, AI-search, app stores, paid media and conversion — orchestrated so each channel
+                makes the others stronger.
+            </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
+            @foreach($services as $service)
+                @php $featured = $service['featured'] ?? false; @endphp
+                <article class="card group {{ $featured ? 'ring-1 ring-flame-500/40 lg:col-span-1' : '' }}" id="card-{{ $service['slug'] }}">
+                    @if($featured)
+                        <span class="absolute right-5 top-5 rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Featured</span>
+                    @endif
+                    <div class="flex items-center gap-3">
+                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-white transition-transform duration-500 group-hover:scale-110">
+                            <x-icon :name="$service['icon']" class="h-6 w-6" />
+                        </span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-steel-400">{{ $service['short'] }}</span>
+                    </div>
+
+                    <h3 class="mt-5 text-xl">{{ $service['name'] }}</h3>
+                    <p class="mt-1 text-sm font-medium text-flame-400">{{ $service['tagline'] }}</p>
+                    <p class="mt-3 text-sm leading-relaxed text-white/55">{{ $service['desc'] }}</p>
+
+                    <ul class="mt-5 space-y-2">
+                        @foreach($service['points'] as $point)
+                            <li class="flex items-start gap-2 text-sm text-white/70">
+                                <x-icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-volt-400" />
+                                {{ $point }}
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-volt-400">
+                        Learn more <x-icon name="arrow" class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+
+                    {{-- full-card link to the detail page --}}
+                    <a href="/services/{{ $service['slug'] }}" wire:navigate class="absolute inset-0 rounded-2xl"
+                       aria-label="Learn more about {{ $service['name'] }}"></a>
+                </article>
+            @endforeach
+        </div>
+    </div>
+</section>
