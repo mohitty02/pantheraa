@@ -260,7 +260,7 @@
     "src": "node_modules/katex/dist/katex.min.css"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CVZiLe4n.css",
+    "file": "assets/app-CEFkhTzV.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",

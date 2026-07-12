@@ -50,19 +50,19 @@ new class extends Component
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div class="flex flex-wrap gap-2">
             <button wire:click="setCategory('')"
-                    class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors {{ $category === '' ? 'border-transparent bg-white text-ink-950' : 'border-white/15 text-white/70 hover:text-white' }}">
+                    class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors {{ $category === '' ? 'border-transparent bg-ink-50 text-ink-900' : 'border-ink-200 text-ink-600 hover:text-ink-900' }}">
                 All
             </button>
             @foreach($categories as $c)
                 <button wire:click="setCategory('{{ $c->slug }}')"
-                        class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors {{ $category === $c->slug ? 'border-transparent bg-white text-ink-950' : 'border-white/15 text-white/70 hover:text-white' }}">
+                        class="rounded-full border px-4 py-1.5 text-sm font-medium transition-colors {{ $category === $c->slug ? 'border-transparent bg-ink-50 text-ink-900' : 'border-ink-200 text-ink-600 hover:text-ink-900' }}">
                     {{ $c->name }}
                 </button>
             @endforeach
         </div>
         <div class="lg:w-72">
             <input type="search" wire:model.live.debounce.300ms="search" placeholder="Search learnings…"
-                   class="w-full rounded-full border border-white/10 bg-ink-900 px-5 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-volt-500">
+                   class="w-full rounded-full border border-ink-200 bg-ink-50 px-5 py-2.5 text-sm text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500">
         </div>
     </div>
 
@@ -77,25 +77,25 @@ new class extends Component
                              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
                     @else
                         <div class="grid h-full w-full place-items-center bg-gradient-to-br from-flame-600/30 to-volt-600/30">
-                            <x-panther class="h-14 w-14 text-white/80" />
+                            <x-panther class="h-14 w-14 text-ink-700" />
                         </div>
                     @endif
                     @if($l->category)
-                        <span class="absolute left-3 top-3 rounded-full bg-ink-950/80 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">{{ $l->category }}</span>
+                        <span class="absolute left-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[11px] font-semibold text-ink-900 backdrop-blur">{{ $l->category }}</span>
                     @endif
                 </div>
                 <div class="flex flex-1 flex-col p-6">
-                    <h3 class="text-lg leading-snug text-white group-hover:text-volt-300">{{ $l->title }}</h3>
-                    <p class="mt-2 flex-1 text-sm leading-relaxed text-white/55">{{ \Illuminate\Support\Str::limit($l->excerpt, 120) }}</p>
-                    <div class="mt-4 flex items-center gap-3 text-xs text-white/40">
+                    <h3 class="text-lg leading-snug text-ink-900 group-hover:text-volt-600">{{ $l->title }}</h3>
+                    <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-500">{{ \Illuminate\Support\Str::limit($l->excerpt, 120) }}</p>
+                    <div class="mt-4 flex items-center gap-3 text-xs text-ink-400">
                         <span>{{ optional($l->published_at)->format('d M Y') }}</span>
-                        <span class="h-1 w-1 rounded-full bg-white/30"></span>
+                        <span class="h-1 w-1 rounded-full bg-ink-300"></span>
                         <span>{{ $l->reading_minutes }} min read</span>
                     </div>
                 </div>
             </a>
         @empty
-            <div class="col-span-full rounded-2xl border border-white/10 bg-white/[0.02] py-16 text-center text-white/45">
+            <div class="col-span-full rounded-2xl border border-ink-200 bg-ink-50 py-16 text-center text-ink-400">
                 No learnings found{{ $category ? ' in '.$category : '' }}. Check back soon. 🐾
             </div>
         @endforelse

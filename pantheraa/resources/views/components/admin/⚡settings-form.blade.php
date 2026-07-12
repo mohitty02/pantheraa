@@ -100,7 +100,7 @@ new class extends Component
 
 <div class="max-w-3xl space-y-6">
     @if(session('status'))
-        <div class="rounded-xl border border-volt-500/30 bg-volt-500/10 px-4 py-3 text-sm text-white">{{ session('status') }}</div>
+        <div class="rounded-xl border border-volt-500/30 bg-volt-500/10 px-4 py-3 text-sm text-ink-900">{{ session('status') }}</div>
     @endif
 
     <section class="card">
@@ -152,7 +152,7 @@ new class extends Component
 
     <section class="card">
         <h3 class="text-lg">SEO defaults</h3>
-        <p class="mt-1 text-sm text-white/50">Used when a page doesn't set its own values.</p>
+        <p class="mt-1 text-sm text-ink-500">Used when a page doesn't set its own values.</p>
         <div class="mt-4 grid gap-4 sm:grid-cols-2">
             <x-admin.field wire="f.seo_title_suffix" label="Title suffix" ph="Pantheraa Space" />
             <x-admin.field wire="f.seo_twitter_site" label="Twitter/X handle" ph="@pantheraaspace" />
@@ -164,7 +164,7 @@ new class extends Component
 
     <section class="card">
         <h3 class="text-lg">Tracking &amp; analytics</h3>
-        <p class="mt-1 text-sm text-white/50">Paste IDs only — snippets load automatically. Leave blank to disable.</p>
+        <p class="mt-1 text-sm text-ink-500">Paste IDs only — snippets load automatically. Leave blank to disable.</p>
         <div class="mt-4 grid gap-4 sm:grid-cols-2">
             <x-admin.field wire="f.ga4_id" label="Google Analytics 4 ID" ph="G-XXXXXXX" />
             <x-admin.field wire="f.gtm_id" label="Google Tag Manager ID" ph="GTM-XXXXXX" />

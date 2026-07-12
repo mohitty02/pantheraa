@@ -37,7 +37,7 @@
             <h1 class="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl" data-hero>
                 Full-stack growth, <span class="text-gradient">under one roof.</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-white/65" data-hero>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-600" data-hero>
                 From classic search to AI answer engines and app stores — we build the channels that
                 turn attention into revenue, and we make them work together.
             </p>

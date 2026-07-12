@@ -31,7 +31,7 @@
                 <h1 class="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl" data-hero>
                     We're the <span class="text-gradient">Digital Panther</span> behind your growth.
                 </h1>
-                <p class="mt-6 max-w-2xl text-lg text-white/65" data-hero>
+                <p class="mt-6 max-w-2xl text-lg text-ink-600" data-hero>
                     {{ $s['name'] }} is a performance-first digital marketing agency founded in {{ $s['founded'] }}.
                     Like our namesake, we move with patience and precision — studying the terrain, then
                     striking where growth is fastest. SEO, AEO, GEO, ASO, paid media and conversion,
@@ -53,11 +53,11 @@
             <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
                 @foreach($values as $v)
                     <div class="card">
-                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-white">
+                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
                             <x-icon :name="$v['icon']" class="h-6 w-6" />
                         </span>
                         <h3 class="mt-5 text-lg">{{ $v['title'] }}</h3>
-                        <p class="mt-2 text-sm leading-relaxed text-white/55">{{ $v['desc'] }}</p>
+                        <p class="mt-2 text-sm leading-relaxed text-ink-500">{{ $v['desc'] }}</p>
                     </div>
                 @endforeach
             </div>

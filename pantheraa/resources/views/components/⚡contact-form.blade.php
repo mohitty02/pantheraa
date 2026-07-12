@@ -64,7 +64,7 @@ new class extends Component
                 <x-icon name="check" class="h-8 w-8" />
             </span>
             <h3 class="text-2xl">Message received. 🐾</h3>
-            <p class="max-w-sm text-white/60">
+            <p class="max-w-sm text-ink-500">
                 Thanks — our team will reply within one business day with your free growth audit.
             </p>
             <button type="button" wire:click="$set('sent', false)" class="btn-ghost mt-2">
@@ -75,61 +75,61 @@ new class extends Component
         <form wire:submit="submit" class="card space-y-5" novalidate>
             <div class="grid gap-5 sm:grid-cols-2">
                 <div>
-                    <label for="cf-name" class="mb-1.5 block text-sm font-medium text-white/80">Name <span class="text-flame-400">*</span></label>
+                    <label for="cf-name" class="mb-1.5 block text-sm font-medium text-ink-700">Name <span class="text-flame-600">*</span></label>
                     <input id="cf-name" type="text" wire:model="name" autocomplete="name"
-                           class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
+                           class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder-ink-400 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
                            placeholder="Jane Cooper">
-                    @error('name') <p class="mt-1.5 text-xs text-flame-400">{{ $message }}</p> @enderror
+                    @error('name') <p class="mt-1.5 text-xs text-flame-600">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label for="cf-email" class="mb-1.5 block text-sm font-medium text-white/80">Email <span class="text-flame-400">*</span></label>
+                    <label for="cf-email" class="mb-1.5 block text-sm font-medium text-ink-700">Email <span class="text-flame-600">*</span></label>
                     <input id="cf-email" type="email" wire:model="email" autocomplete="email"
-                           class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
+                           class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder-ink-400 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
                            placeholder="jane@company.com">
-                    @error('email') <p class="mt-1.5 text-xs text-flame-400">{{ $message }}</p> @enderror
+                    @error('email') <p class="mt-1.5 text-xs text-flame-600">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label for="cf-phone" class="mb-1.5 block text-sm font-medium text-white/80">Phone</label>
+                    <label for="cf-phone" class="mb-1.5 block text-sm font-medium text-ink-700">Phone</label>
                     <input id="cf-phone" type="tel" wire:model="phone" autocomplete="tel"
-                           class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
+                           class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder-ink-400 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
                            placeholder="+91 98765 43210">
-                    @error('phone') <p class="mt-1.5 text-xs text-flame-400">{{ $message }}</p> @enderror
+                    @error('phone') <p class="mt-1.5 text-xs text-flame-600">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label for="cf-company" class="mb-1.5 block text-sm font-medium text-white/80">Company</label>
+                    <label for="cf-company" class="mb-1.5 block text-sm font-medium text-ink-700">Company</label>
                     <input id="cf-company" type="text" wire:model="company" autocomplete="organization"
-                           class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
+                           class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder-ink-400 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
                            placeholder="Acme Inc.">
                 </div>
                 <div>
-                    <label for="cf-service" class="mb-1.5 block text-sm font-medium text-white/80">Service of interest</label>
+                    <label for="cf-service" class="mb-1.5 block text-sm font-medium text-ink-700">Service of interest</label>
                     <select id="cf-service" wire:model="service"
-                            class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500">
-                        <option value="" class="bg-ink-900">Select a service</option>
+                            class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500">
+                        <option value="" class="bg-ink-50">Select a service</option>
                         @foreach(config('site.services') as $s)
-                            <option value="{{ $s['name'] }}" class="bg-ink-900">{{ $s['name'] }}</option>
+                            <option value="{{ $s['name'] }}" class="bg-ink-50">{{ $s['name'] }}</option>
                         @endforeach
-                        <option value="Not sure yet" class="bg-ink-900">Not sure yet</option>
+                        <option value="Not sure yet" class="bg-ink-50">Not sure yet</option>
                     </select>
                 </div>
                 <div>
-                    <label for="cf-budget" class="mb-1.5 block text-sm font-medium text-white/80">Monthly budget</label>
+                    <label for="cf-budget" class="mb-1.5 block text-sm font-medium text-ink-700">Monthly budget</label>
                     <select id="cf-budget" wire:model="budget"
-                            class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500">
-                        <option value="" class="bg-ink-900">Select a range</option>
+                            class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500">
+                        <option value="" class="bg-ink-50">Select a range</option>
                         @foreach(['< $1k', '$1k – $5k', '$5k – $15k', '$15k+'] as $b)
-                            <option value="{{ $b }}" class="bg-ink-900">{{ $b }}</option>
+                            <option value="{{ $b }}" class="bg-ink-50">{{ $b }}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
 
             <div>
-                <label for="cf-message" class="mb-1.5 block text-sm font-medium text-white/80">Project brief <span class="text-flame-400">*</span></label>
+                <label for="cf-message" class="mb-1.5 block text-sm font-medium text-ink-700">Project brief <span class="text-flame-600">*</span></label>
                 <textarea id="cf-message" rows="4" wire:model="message"
-                          class="w-full rounded-xl border border-white/10 bg-ink-950/60 px-4 py-3 text-white placeholder-white/30 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
+                          class="w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder-ink-400 outline-none transition focus:border-volt-500 focus:ring-1 focus:ring-volt-500"
                           placeholder="Tell us about your goals, current channels and timeline…"></textarea>
-                @error('message') <p class="mt-1.5 text-xs text-flame-400">{{ $message }}</p> @enderror
+                @error('message') <p class="mt-1.5 text-xs text-flame-600">{{ $message }}</p> @enderror
             </div>
 
             <button type="submit" class="btn-primary w-full sm:w-auto" wire:loading.attr="disabled" wire:target="submit">
@@ -146,7 +146,7 @@ new class extends Component
                 </span>
             </button>
 
-            <p class="text-xs text-white/40">We reply within 1 business day. Your details stay private.</p>
+            <p class="text-xs text-ink-400">We reply within 1 business day. Your details stay private.</p>
         </form>
     @endif
 </div>

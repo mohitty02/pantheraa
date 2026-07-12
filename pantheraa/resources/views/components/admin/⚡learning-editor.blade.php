@@ -122,7 +122,7 @@ new class extends Component
 <div>
     <div class="mb-6 flex items-center justify-between">
         <div>
-            <a href="/admin/learnings" wire:navigate class="text-sm text-white/50 hover:text-white">← Back to Learnings</a>
+            <a href="/admin/learnings" wire:navigate class="text-sm text-ink-500 hover:text-ink-900">← Back to Learnings</a>
             <h2 class="mt-1 text-2xl">{{ $learningId ? 'Edit learning' : 'New learning' }}</h2>
         </div>
         <div class="flex items-center gap-2">
@@ -138,51 +138,51 @@ new class extends Component
         {{-- Editor --}}
         <div class="space-y-5">
             <div>
-                <label class="mb-1.5 block text-sm font-medium text-white/80">Title <span class="text-flame-400">*</span></label>
+                <label class="mb-1.5 block text-sm font-medium text-ink-700">Title <span class="text-flame-600">*</span></label>
                 <input type="text" wire:model="title" placeholder="What did you learn today?"
-                       class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-white placeholder-white/30 outline-none focus:border-volt-500">
-                @error('title') <p class="mt-1 text-xs text-flame-400">{{ $message }}</p> @enderror
+                       class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500">
+                @error('title') <p class="mt-1 text-xs text-flame-600">{{ $message }}</p> @enderror
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="mb-1.5 block text-sm font-medium text-white/80">Slug <span class="text-white/40">(auto)</span></label>
+                    <label class="mb-1.5 block text-sm font-medium text-ink-700">Slug <span class="text-ink-400">(auto)</span></label>
                     <input type="text" wire:model="slug" placeholder="auto-from-title"
-                           class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-volt-500">
+                           class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500">
                 </div>
                 <div>
-                    <label class="mb-1.5 block text-sm font-medium text-white/80">Category</label>
+                    <label class="mb-1.5 block text-sm font-medium text-ink-700">Category</label>
                     <select wire:model="categoryId"
-                            class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none focus:border-volt-500">
-                        <option value="" class="bg-ink-900">— None —</option>
+                            class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 outline-none focus:border-volt-500">
+                        <option value="" class="bg-ink-50">— None —</option>
                         @foreach($categories as $cat)
-                            <option value="{{ $cat->id }}" class="bg-ink-900">{{ $cat->name }}</option>
+                            <option value="{{ $cat->id }}" class="bg-ink-50">{{ $cat->name }}</option>
                         @endforeach
                     </select>
                     @if($categories->isEmpty())
-                        <p class="mt-1 text-xs text-white/40">No categories yet — <a href="/admin/content/categories" class="text-volt-400">add some</a>.</p>
+                        <p class="mt-1 text-xs text-ink-400">No categories yet — <a href="/admin/content/categories" class="text-volt-600">add some</a>.</p>
                     @endif
                 </div>
             </div>
 
             <div>
-                <label class="mb-1.5 block text-sm font-medium text-white/80">Tags <span class="text-white/40">(comma separated)</span></label>
+                <label class="mb-1.5 block text-sm font-medium text-ink-700">Tags <span class="text-ink-400">(comma separated)</span></label>
                 <input type="text" wire:model="tagsInput" placeholder="rag, embeddings, vector-db"
-                       class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-volt-500">
+                       class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500">
             </div>
 
             <div>
-                <label class="mb-1.5 block text-sm font-medium text-white/80">Excerpt <span class="text-white/40">(optional)</span></label>
+                <label class="mb-1.5 block text-sm font-medium text-ink-700">Excerpt <span class="text-ink-400">(optional)</span></label>
                 <textarea wire:model="excerpt" rows="2" placeholder="Short summary (auto-generated if left blank)"
-                          class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-volt-500"></textarea>
+                          class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500"></textarea>
             </div>
 
             <div>
-                <label class="mb-1.5 block text-sm font-medium text-white/80">Cover image</label>
+                <label class="mb-1.5 block text-sm font-medium text-ink-700">Cover image</label>
                 <input type="file" wire:model="cover" accept="image/*"
-                       class="block w-full text-sm text-white/60 file:mr-3 file:rounded-lg file:border-0 file:bg-white/10 file:px-3 file:py-2 file:text-sm file:text-white hover:file:bg-white/20">
-                <div wire:loading wire:target="cover" class="mt-1 text-xs text-white/50">Uploading…</div>
-                @error('cover') <p class="mt-1 text-xs text-flame-400">{{ $message }}</p> @enderror
+                       class="block w-full text-sm text-ink-500 file:mr-3 file:rounded-lg file:border-0 file:bg-ink-100 file:px-3 file:py-2 file:text-sm file:text-ink-900 hover:file:bg-ink-200">
+                <div wire:loading wire:target="cover" class="mt-1 text-xs text-ink-500">Uploading…</div>
+                @error('cover') <p class="mt-1 text-xs text-flame-600">{{ $message }}</p> @enderror
                 @if($cover)
                     <img src="{{ $cover->temporaryUrl() }}" class="mt-3 h-32 w-full rounded-xl object-cover" alt="preview">
                 @elseif($coverPath)
@@ -191,50 +191,50 @@ new class extends Component
             </div>
 
             <div>
-                <label class="mb-1.5 flex items-center justify-between text-sm font-medium text-white/80">
-                    <span>Body <span class="text-flame-400">*</span></span>
-                    <span class="text-xs font-normal text-white/40">Markdown · ```code``` · $LaTeX$ · ![img](url)</span>
+                <label class="mb-1.5 flex items-center justify-between text-sm font-medium text-ink-700">
+                    <span>Body <span class="text-flame-600">*</span></span>
+                    <span class="text-xs font-normal text-ink-400">Markdown · ```code``` · $LaTeX$ · ![img](url)</span>
                 </label>
                 <textarea wire:model.live.debounce.500ms="body" rows="20" spellcheck="false"
-                          class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 font-mono text-sm leading-relaxed text-white placeholder-white/30 outline-none focus:border-volt-500"
+                          class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 font-mono text-sm leading-relaxed text-ink-900 placeholder-ink-400 outline-none focus:border-volt-500"
                           placeholder="# Heading&#10;&#10;Today I learned about **RAG**…&#10;&#10;```python&#10;print('hello')&#10;```&#10;&#10;Inline math like $E = mc^2$ and block:&#10;$$ \int_0^1 x^2 dx = \frac{1}{3} $$"></textarea>
-                @error('body') <p class="mt-1 text-xs text-flame-400">{{ $message }}</p> @enderror
+                @error('body') <p class="mt-1 text-xs text-flame-600">{{ $message }}</p> @enderror
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="mb-1.5 block text-sm font-medium text-white/80">Status</label>
-                    <select wire:model="status" class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none focus:border-volt-500">
-                        <option value="draft" class="bg-ink-900">Draft</option>
-                        <option value="published" class="bg-ink-900">Published</option>
+                    <label class="mb-1.5 block text-sm font-medium text-ink-700">Status</label>
+                    <select wire:model="status" class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 outline-none focus:border-volt-500">
+                        <option value="draft" class="bg-ink-50">Draft</option>
+                        <option value="published" class="bg-ink-50">Published</option>
                     </select>
                 </div>
                 <div>
-                    <label class="mb-1.5 block text-sm font-medium text-white/80">Publish date</label>
+                    <label class="mb-1.5 block text-sm font-medium text-ink-700">Publish date</label>
                     <input type="datetime-local" wire:model="publishedAt"
-                           class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none focus:border-volt-500">
+                           class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-3 text-sm text-ink-900 outline-none focus:border-volt-500">
                 </div>
             </div>
 
             {{-- SEO --}}
-            <div class="rounded-2xl border border-white/10 p-4">
-                <h3 class="flex items-center gap-2 text-sm font-semibold text-white"><x-icon name="shield" class="h-4 w-4 text-volt-400" /> SEO</h3>
+            <div class="rounded-2xl border border-ink-200 p-4">
+                <h3 class="flex items-center gap-2 text-sm font-semibold text-ink-900"><x-icon name="shield" class="h-4 w-4 text-volt-600" /> SEO</h3>
                 <div class="mt-3 space-y-3">
                     <div>
-                        <label class="mb-1 block text-xs font-medium text-white/70">Meta title <span class="text-white/40">(defaults to title)</span></label>
-                        <input type="text" wire:model="metaTitle" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
+                        <label class="mb-1 block text-xs font-medium text-ink-600">Meta title <span class="text-ink-400">(defaults to title)</span></label>
+                        <input type="text" wire:model="metaTitle" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
                     </div>
                     <div>
-                        <label class="mb-1 block text-xs font-medium text-white/70">Meta description <span class="text-white/40">(defaults to excerpt)</span></label>
-                        <textarea wire:model="metaDescription" rows="2" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500"></textarea>
-                        @error('metaDescription') <p class="mt-1 text-xs text-flame-400">{{ $message }}</p> @enderror
+                        <label class="mb-1 block text-xs font-medium text-ink-600">Meta description <span class="text-ink-400">(defaults to excerpt)</span></label>
+                        <textarea wire:model="metaDescription" rows="2" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500"></textarea>
+                        @error('metaDescription') <p class="mt-1 text-xs text-flame-600">{{ $message }}</p> @enderror
                     </div>
                     <div>
-                        <label class="mb-1 block text-xs font-medium text-white/70">Canonical URL <span class="text-white/40">(optional)</span></label>
-                        <input type="text" wire:model="canonical" placeholder="https://…" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
+                        <label class="mb-1 block text-xs font-medium text-ink-600">Canonical URL <span class="text-ink-400">(optional)</span></label>
+                        <input type="text" wire:model="canonical" placeholder="https://…" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
                     </div>
-                    <label class="flex items-center gap-2 text-sm text-white/70">
-                        <input type="checkbox" wire:model="noindex" class="rounded border-white/20 bg-ink-950 text-flame-500"> Hide from search engines (noindex)
+                    <label class="flex items-center gap-2 text-sm text-ink-600">
+                        <input type="checkbox" wire:model="noindex" class="rounded border-ink-300 bg-white text-flame-500"> Hide from search engines (noindex)
                     </label>
                 </div>
             </div>
@@ -242,12 +242,12 @@ new class extends Component
 
         {{-- Live preview --}}
         <div class="lg:sticky lg:top-24 lg:self-start">
-            <div class="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/40">
+            <div class="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-400">
                 <span class="h-1.5 w-1.5 rounded-full bg-volt-400"></span> Live preview
             </div>
-            <div class="h-[36rem] overflow-y-auto rounded-2xl border border-white/10 bg-ink-950 p-6">
+            <div class="h-[36rem] overflow-y-auto rounded-2xl border border-ink-200 bg-white p-6">
                 <article data-rich class="prose-rich">
-                    {!! $preview ?: '<p class="text-white/30">Start typing to see a preview…</p>' !!}
+                    {!! $preview ?: '<p class="text-ink-400">Start typing to see a preview…</p>' !!}
                 </article>
             </div>
         </div>

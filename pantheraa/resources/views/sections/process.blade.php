@@ -8,7 +8,7 @@
                 <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl">
                     A predictable path to <span class="text-gradient-flame">growth.</span>
                 </h2>
-                <p class="mt-4 text-white/60">
+                <p class="mt-4 text-ink-500">
                     No black boxes. A clear, four-step system that turns strategy into momentum —
                     and momentum into compounding results.
                 </p>
@@ -22,9 +22,9 @@
                 <div class="grid gap-5 sm:grid-cols-2" data-stagger>
                     @foreach($process as $step)
                         <div class="card">
-                            <div class="font-display text-5xl font-bold text-white/10">{{ $step['no'] }}</div>
+                            <div class="font-display text-5xl font-bold text-ink-200">{{ $step['no'] }}</div>
                             <h3 class="mt-3 text-xl">{{ $step['title'] }}</h3>
-                            <p class="mt-2 text-sm leading-relaxed text-white/55">{{ $step['desc'] }}</p>
+                            <p class="mt-2 text-sm leading-relaxed text-ink-500">{{ $step['desc'] }}</p>
                         </div>
                     @endforeach
                 </div>

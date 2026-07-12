@@ -8,24 +8,30 @@
 
 /*
 |--------------------------------------------------------------------------
-| Pantheraa Space — Brand Design System
+| Pantheraa Space — Brand Design System (LIGHT)
 |--------------------------------------------------------------------------
-| Derived from the logo: a black panther with a RED left eye and a
-| ROYAL-BLUE right eye, steel-blue "Pantheraa" wordmark on near-black.
-| The signature gradient (flame -> volt) mirrors the two eyes.
+| Conversion-first light theme for a digital marketing agency: clean white
+| canvas, high-contrast copy, generous whitespace, and the brand's signature
+| flame(red) -> volt(blue) gradient — taken from the panther's two eyes —
+| reserved almost exclusively for CTAs and key accents so they pop.
 */
 @theme {
     /* Typography */
     --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
-    /* Ink — the panther black palette (backgrounds) */
-    --color-ink-950: #050507;
-    --color-ink-900: #0a0a0f;
-    --color-ink-850: #0e0e15;
-    --color-ink-800: #14141d;
-    --color-ink-700: #1d1d29;
-    --color-ink-600: #2a2a3a;
+    /* Ink — neutral scale (50 = lightest surface, 950 = near-black) */
+    --color-ink-50:  #f6f8fb;
+    --color-ink-100: #eceff4;
+    --color-ink-200: #dfe4ec;
+    --color-ink-300: #c6cddb;
+    --color-ink-400: #97a1b4;
+    --color-ink-500: #6a7488;
+    --color-ink-600: #4b5568;
+    --color-ink-700: #353d4d;
+    --color-ink-800: #1f2634;
+    --color-ink-900: #0e1420;
+    --color-ink-950: #070b12;
 
     /* Steel — the "Pantheraa" wordmark blue (muted, trustworthy) */
     --color-steel-300: #8fa9cc;
@@ -37,12 +43,14 @@
     --color-flame-400: #ff4d5e;
     --color-flame-500: #e11d2e;
     --color-flame-600: #c11626;
+    --color-flame-700: #9e1120;
 
     /* Volt — the blue eye (secondary accent / tech) */
     --color-volt-300: #7da3ff;
     --color-volt-400: #4d82ff;
     --color-volt-500: #2b6cff;
     --color-volt-600: #1d4ed8;
+    --color-volt-700: #1a3fb0;
 
     /* Animation easing */
     --ease-panther: cubic-bezier(0.22, 1, 0.36, 1);
@@ -53,7 +61,7 @@
 
 @layer base {
     :root {
-        color-scheme: dark;
+        color-scheme: light;
         scroll-behavior: smooth;
     }
 
@@ -66,8 +74,8 @@
     }
 
     body {
-        background-color: var(--color-ink-950);
-        color: #e6e8ef;
+        background-color: #ffffff;
+        color: var(--color-ink-600);
         font-family: var(--font-sans);
         overflow-x: hidden;
     }
@@ -81,14 +89,14 @@
         font-family: var(--font-display);
         letter-spacing: -0.02em;
         line-height: 1.05;
-        color: #fff;
+        color: var(--color-ink-900);
     }
 
     /* Custom scrollbar */
     ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: var(--color-ink-950); }
+    ::-webkit-scrollbar-track { background: var(--color-ink-100); }
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(var(--color-flame-600), var(--color-volt-600));
+        background: linear-gradient(var(--color-flame-500), var(--color-volt-500));
         border-radius: 99px;
     }
 
@@ -108,9 +116,9 @@
         @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
     }
 
-    /* The signature dual-eye gradient text */
+    /* The signature dual-eye gradient text (reads strongly on white) */
     .text-gradient {
-        background-image: linear-gradient(100deg, var(--color-flame-400), #ffffff 45%, var(--color-volt-400));
+        background-image: linear-gradient(100deg, var(--color-flame-600), var(--color-volt-600));
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -125,30 +133,36 @@
 
     /* Eyebrow / kicker label */
     .kicker {
-        @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-steel-300 backdrop-blur;
+        @apply inline-flex items-center gap-2 rounded-full border border-ink-200 bg-ink-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-steel-600;
     }
 
-    /* Primary button — flame->volt gradient */
+    /* Primary CTA — flame->volt gradient, always white text */
     .btn-primary {
-        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-transform duration-300;
+        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300;
+        color: #ffffff;
         background-image: linear-gradient(100deg, var(--color-flame-500), var(--color-volt-500));
-        box-shadow: 0 10px 40px -12px color-mix(in srgb, var(--color-flame-500) 60%, transparent);
+        box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--color-flame-500) 55%, transparent);
     }
-    .btn-primary:hover { @apply -translate-y-0.5; }
+    .btn-primary:hover {
+        @apply -translate-y-0.5;
+        box-shadow: 0 16px 40px -12px color-mix(in srgb, var(--color-flame-500) 65%, transparent);
+    }
     .btn-primary:active { @apply translate-y-0; }
 
     /* Ghost / secondary button */
     .btn-ghost {
-        @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/40 hover:bg-white/[0.06];
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-300 bg-white px-7 py-3.5 text-sm font-semibold text-ink-900 transition-colors duration-300 hover:border-ink-400 hover:bg-ink-50;
     }
 
-    /* Glass card */
+    /* Card — crisp white surface with a soft lift on hover */
     .card {
-        @apply relative rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur transition-all duration-500;
+        @apply relative rounded-2xl border border-ink-200 bg-white p-7 transition-all duration-300;
+        box-shadow: 0 1px 2px rgba(14, 20, 32, 0.04);
     }
     .card:hover {
-        @apply border-white/20 bg-white/[0.05];
+        @apply border-ink-300;
         transform: translateY(-4px);
+        box-shadow: 0 18px 40px -18px rgba(14, 20, 32, 0.18);
     }
 
     /* Section spacing */
@@ -156,23 +170,23 @@
         @apply relative py-20 sm:py-28 lg:py-32;
     }
 
-    /* Animated gradient orb (decorative background blur) */
+    /* Soft colour wash (decorative background blur) */
     .orb {
         @apply pointer-events-none absolute rounded-full blur-[120px];
-        opacity: 0.5;
+        opacity: 0.35;
     }
 
     /* Hairline divider */
     .hairline {
-        background-image: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-steel-400) 60%, transparent), transparent);
+        background-image: linear-gradient(90deg, transparent, var(--color-ink-200), transparent);
         height: 1px;
     }
 
     /* Grid backdrop */
     .grid-bg {
         background-image:
-            linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+            linear-gradient(to right, rgba(14,20,32,0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(14,20,32,0.05) 1px, transparent 1px);
         background-size: 64px 64px;
         -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
         mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
@@ -183,31 +197,32 @@
 |--------------------------------------------------------------------------
 | Learnings article typography (.prose-rich) — Markdown + code + math
 |--------------------------------------------------------------------------
+| Body copy is dark-on-white; code blocks stay dark for contrast/readability.
 */
-.prose-rich { @apply text-[15.5px] leading-7 text-white/75; }
+.prose-rich { @apply text-[16px] leading-7 text-ink-600; }
 .prose-rich > * + * { margin-top: 1.15em; }
-.prose-rich h1, .prose-rich h2, .prose-rich h3, .prose-rich h4 { @apply font-display text-white; line-height: 1.2; }
+.prose-rich h1, .prose-rich h2, .prose-rich h3, .prose-rich h4 { @apply font-display text-ink-900; line-height: 1.2; }
 .prose-rich h1 { @apply mt-10 text-3xl; }
 .prose-rich h2 { @apply mt-10 text-2xl; }
 .prose-rich h3 { @apply mt-8 text-xl; }
 .prose-rich h4 { @apply mt-6 text-lg; }
-.prose-rich a { @apply font-medium text-volt-400 underline decoration-volt-500/40 underline-offset-2 hover:text-volt-300; }
-.prose-rich strong { @apply font-semibold text-white; }
+.prose-rich a { @apply font-medium text-volt-600 underline decoration-volt-500/40 underline-offset-2 hover:text-volt-700; }
+.prose-rich strong { @apply font-semibold text-ink-900; }
 .prose-rich em { @apply italic; }
 .prose-rich ul { @apply list-disc space-y-1.5 pl-6; }
 .prose-rich ol { @apply list-decimal space-y-1.5 pl-6; }
-.prose-rich li::marker { color: var(--color-steel-400); }
-.prose-rich blockquote { @apply rounded-r-lg border-l-2 border-flame-500 bg-white/[0.03] py-2 pl-5 pr-4 text-white/70 italic; }
-.prose-rich hr { @apply border-white/10; }
-.prose-rich img { @apply rounded-xl border border-white/10; }
+.prose-rich li::marker { color: var(--color-steel-500); }
+.prose-rich blockquote { @apply rounded-r-lg border-l-2 border-flame-500 bg-ink-50 py-2 pl-5 pr-4 text-ink-700 italic; }
+.prose-rich hr { @apply border-ink-200; }
+.prose-rich img { @apply rounded-xl border border-ink-200; }
 .prose-rich table { @apply block w-full overflow-x-auto border-collapse text-sm; }
-.prose-rich th, .prose-rich td { @apply border border-white/10 px-3 py-2 text-left; }
-.prose-rich th { @apply bg-white/5 font-semibold text-white; }
+.prose-rich th, .prose-rich td { @apply border border-ink-200 px-3 py-2 text-left; }
+.prose-rich th { @apply bg-ink-50 font-semibold text-ink-900; }
 .prose-rich :not(pre) > code {
-    @apply rounded-md border border-white/10 bg-white/[0.06] px-1.5 py-0.5 text-[0.85em] text-flame-400;
+    @apply rounded-md border border-ink-200 bg-ink-50 px-1.5 py-0.5 text-[0.85em] text-flame-600;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
-.prose-rich pre { @apply overflow-x-auto rounded-2xl border border-white/10 bg-ink-950 p-5 text-[13.5px] leading-relaxed; }
+.prose-rich pre { @apply overflow-x-auto rounded-2xl border border-ink-800 bg-ink-950 p-5 text-[13.5px] leading-relaxed; }
 .prose-rich pre code { @apply bg-transparent p-0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 .prose-rich .katex-display { @apply my-6 overflow-x-auto overflow-y-hidden py-1; }
 .prose-rich .katex { font-size: 1.05em; }

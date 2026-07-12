@@ -25,21 +25,21 @@
             @foreach($cases as $case)
                 <article class="card group flex flex-col">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-steel-400">{{ $case['industry'] }}</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-steel-600">{{ $case['industry'] }}</span>
                         <div class="flex gap-1.5">
                             @foreach($case['tags'] as $tag)
-                                <span class="rounded-full border border-white/10 px-2.5 py-0.5 text-[10px] font-semibold text-white/60">{{ $tag }}</span>
+                                <span class="rounded-full border border-ink-200 px-2.5 py-0.5 text-[10px] font-semibold text-ink-500">{{ $tag }}</span>
                             @endforeach
                         </div>
                     </div>
 
                     <div class="mt-8 flex items-end gap-2">
                         <span class="font-display text-5xl font-bold text-gradient">{{ $case['metric'] }}</span>
-                        <span class="mb-1.5 text-sm text-white/55">{{ $case['kpi'] }}</span>
+                        <span class="mb-1.5 text-sm text-ink-500">{{ $case['kpi'] }}</span>
                     </div>
 
                     <h3 class="mt-6 text-lg">{{ $case['client'] }}</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-white/55">{{ $case['desc'] }}</p>
+                    <p class="mt-2 text-sm leading-relaxed text-ink-500">{{ $case['desc'] }}</p>
 
                     <div class="mt-6 h-px w-full bg-gradient-to-r from-flame-500/40 via-volt-500/40 to-transparent transition-all duration-500 group-hover:from-flame-500 group-hover:via-volt-500"></div>
                 </article>

@@ -17,13 +17,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="min-h-screen bg-ink-950 text-[#e6e8ef] antialiased">
+<body class="min-h-screen bg-white text-ink-600 antialiased">
     @auth
         <div x-data="{ nav: false }" class="flex min-h-screen">
             {{-- Sidebar --}}
-            <aside class="fixed inset-y-0 left-0 z-40 w-64 -translate-x-full border-r border-white/10 bg-ink-900 transition-transform lg:translate-x-0"
+            <aside class="fixed inset-y-0 left-0 z-40 w-64 -translate-x-full border-r border-ink-200 bg-ink-50 transition-transform lg:translate-x-0"
                    :class="nav ? 'translate-x-0' : '-translate-x-full'">
-                <div class="flex h-18 items-center border-b border-white/10 px-5">
+                <div class="flex h-18 items-center border-b border-ink-200 px-5">
                     <x-brand size="md" />
                 </div>
                 <nav class="space-y-1 overflow-y-auto p-4 text-sm" style="max-height: calc(100vh - 4.5rem - 6rem);">
@@ -56,24 +56,24 @@
                         ];
                     @endphp
                     @foreach($groups as $heading => $items)
-                        <div class="px-3 pb-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30">{{ $heading }}</div>
+                        <div class="px-3 pb-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-400">{{ $heading }}</div>
                         @foreach($items as $it)
                             @php $active = request()->is($it['match']); @endphp
                             <a href="{{ $it['href'] }}"
-                               class="flex items-center gap-3 rounded-xl px-3 py-2 font-medium transition-colors {{ $active ? 'bg-white/10 text-white' : 'text-white/60 hover:bg-white/5 hover:text-white' }}">
+                               class="flex items-center gap-3 rounded-xl px-3 py-2 font-medium transition-colors {{ $active ? 'bg-ink-100 text-ink-900' : 'text-ink-500 hover:bg-ink-100 hover:text-ink-900' }}">
                                 <x-icon :name="$it['icon']" class="h-5 w-5" />
                                 {{ $it['label'] }}
                             </a>
                         @endforeach
                     @endforeach
                 </nav>
-                <div class="absolute inset-x-0 bottom-0 border-t border-white/10 p-4">
-                    <a href="/" target="_blank" class="mb-2 flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-white/60 hover:text-white">
+                <div class="absolute inset-x-0 bottom-0 border-t border-ink-200 p-4">
+                    <a href="/" target="_blank" class="mb-2 flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-ink-500 hover:text-ink-900">
                         <x-icon name="arrow" class="h-4 w-4" /> View site
                     </a>
                     <form method="POST" action="/admin/logout">
                         @csrf
-                        <button type="submit" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-flame-400 hover:bg-white/5">
+                        <button type="submit" class="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-flame-600 hover:bg-ink-100">
                             <x-icon name="close" class="h-4 w-4" /> Log out
                         </button>
                     </form>
@@ -82,12 +82,12 @@
 
             {{-- Main --}}
             <div class="flex min-w-0 flex-1 flex-col lg:pl-64">
-                <header class="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-white/10 bg-ink-950/80 px-5 backdrop-blur-xl">
-                    <button @click="nav = !nav" class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white lg:hidden">
+                <header class="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-ink-200 bg-white/85 px-5 backdrop-blur-xl">
+                    <button @click="nav = !nav" class="grid h-10 w-10 place-items-center rounded-lg border border-ink-200 text-ink-900 lg:hidden">
                         <x-icon name="menu" class="h-5 w-5" />
                     </button>
-                    <h1 class="font-display text-lg font-semibold text-white">{{ $title }}</h1>
-                    <span class="text-sm text-white/50">{{ auth()->user()?->name }}</span>
+                    <h1 class="font-display text-lg font-semibold text-ink-900">{{ $title }}</h1>
+                    <span class="text-sm text-ink-500">{{ auth()->user()?->name }}</span>
                 </header>
 
                 <main class="flex-1 p-5 sm:p-8">

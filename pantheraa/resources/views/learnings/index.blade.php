@@ -31,7 +31,7 @@
             <h1 class="mx-auto mt-6 max-w-3xl text-4xl font-bold leading-[1.06] sm:text-6xl" data-hero>
                 Notes from the <span class="text-gradient">frontier.</span>
             </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-white/65" data-hero>
+            <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-600" data-hero>
                 {{ $s['learnings']['tagline'] }} Everything I learn — code, math, experiments and ideas — shared in the open.
             </p>
         </div>

@@ -116,7 +116,7 @@ new class extends Component
 <div class="max-w-3xl">
     <div class="mb-6 flex items-center justify-between">
         <div>
-            <a href="/admin/services" wire:navigate class="text-sm text-white/50 hover:text-white">← Back to Services</a>
+            <a href="/admin/services" wire:navigate class="text-sm text-ink-500 hover:text-ink-900">← Back to Services</a>
             <h2 class="mt-1 text-2xl">{{ $serviceId ? 'Edit service' : 'New service' }}</h2>
         </div>
         <button wire:click="save" class="btn-primary" wire:loading.attr="disabled">
@@ -131,21 +131,21 @@ new class extends Component
             <x-admin.field wire="slug" label="Slug (auto if blank)" />
             <x-admin.field wire="short" label="Short label (e.g. SEO)" />
             <div>
-                <label class="mb-1.5 block text-sm font-medium text-white/80">Icon</label>
+                <label class="mb-1.5 block text-sm font-medium text-ink-700">Icon</label>
                 <div class="flex items-center gap-3">
-                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-white/10 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-white">
+                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
                         <x-icon :name="$icon" class="h-5 w-5" />
                     </span>
-                    <select wire:model.live="icon" class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-white outline-none focus:border-volt-500">
-                        @foreach($icons as $ic)<option value="{{ $ic }}" class="bg-ink-900">{{ $ic }}</option>@endforeach
+                    <select wire:model.live="icon" class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-900 outline-none focus:border-volt-500">
+                        @foreach($icons as $ic)<option value="{{ $ic }}" class="bg-ink-50">{{ $ic }}</option>@endforeach
                     </select>
                 </div>
             </div>
-            <label class="flex items-center gap-2 text-sm text-white/70">
-                <input type="checkbox" wire:model="featured" class="rounded border-white/20 bg-ink-950 text-flame-500"> Featured
+            <label class="flex items-center gap-2 text-sm text-ink-600">
+                <input type="checkbox" wire:model="featured" class="rounded border-ink-300 bg-white text-flame-500"> Featured
             </label>
-            <label class="flex items-center gap-2 text-sm text-white/70">
-                <input type="checkbox" wire:model="is_active" class="rounded border-white/20 bg-ink-950 text-volt-500"> Active
+            <label class="flex items-center gap-2 text-sm text-ink-600">
+                <input type="checkbox" wire:model="is_active" class="rounded border-ink-300 bg-white text-volt-500"> Active
             </label>
             <div class="sm:col-span-2"><x-admin.field wire="tagline" label="Tagline" /></div>
             <div class="sm:col-span-2"><x-admin.field wire="description" label="Short description (cards & schema)" type="textarea" /></div>
@@ -156,13 +156,13 @@ new class extends Component
 
         {{-- Points --}}
         <div class="card">
-            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-white">Key points</h3>
-                <button wire:click="addPoint" class="text-sm text-volt-400">+ Add</button></div>
+            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-ink-900">Key points</h3>
+                <button wire:click="addPoint" class="text-sm text-volt-600">+ Add</button></div>
             <div class="mt-3 space-y-2">
                 @foreach($points as $i => $p)
                     <div class="flex gap-2" wire:key="pt-{{ $i }}">
-                        <input type="text" wire:model="points.{{ $i }}" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
-                        <button wire:click="removePoint({{ $i }})" class="rounded-lg border border-white/10 px-3 text-flame-400">✕</button>
+                        <input type="text" wire:model="points.{{ $i }}" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
+                        <button wire:click="removePoint({{ $i }})" class="rounded-lg border border-ink-200 px-3 text-flame-600">✕</button>
                     </div>
                 @endforeach
             </div>
@@ -170,16 +170,16 @@ new class extends Component
 
         {{-- Deliverables --}}
         <div class="card">
-            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-white">Deliverables (detail page)</h3>
-                <button wire:click="addDeliverable" class="text-sm text-volt-400">+ Add</button></div>
+            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-ink-900">Deliverables (detail page)</h3>
+                <button wire:click="addDeliverable" class="text-sm text-volt-600">+ Add</button></div>
             <div class="mt-3 space-y-3">
                 @foreach($deliverables as $i => $d)
-                    <div class="rounded-xl border border-white/10 p-3" wire:key="dl-{{ $i }}">
+                    <div class="rounded-xl border border-ink-200 p-3" wire:key="dl-{{ $i }}">
                         <div class="flex items-center gap-2">
-                            <input type="text" placeholder="Title" wire:model="deliverables.{{ $i }}.title" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
-                            <button wire:click="removeDeliverable({{ $i }})" class="rounded-lg border border-white/10 px-3 text-flame-400">✕</button>
+                            <input type="text" placeholder="Title" wire:model="deliverables.{{ $i }}.title" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
+                            <button wire:click="removeDeliverable({{ $i }})" class="rounded-lg border border-ink-200 px-3 text-flame-600">✕</button>
                         </div>
-                        <textarea rows="2" placeholder="Description" wire:model="deliverables.{{ $i }}.desc" class="mt-2 w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500"></textarea>
+                        <textarea rows="2" placeholder="Description" wire:model="deliverables.{{ $i }}.desc" class="mt-2 w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500"></textarea>
                     </div>
                 @endforeach
             </div>
@@ -187,13 +187,13 @@ new class extends Component
 
         {{-- Outcomes --}}
         <div class="card">
-            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-white">Outcomes</h3>
-                <button wire:click="addOutcome" class="text-sm text-volt-400">+ Add</button></div>
+            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-ink-900">Outcomes</h3>
+                <button wire:click="addOutcome" class="text-sm text-volt-600">+ Add</button></div>
             <div class="mt-3 space-y-2">
                 @foreach($outcomes as $i => $o)
                     <div class="flex gap-2" wire:key="oc-{{ $i }}">
-                        <input type="text" wire:model="outcomes.{{ $i }}" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
-                        <button wire:click="removeOutcome({{ $i }})" class="rounded-lg border border-white/10 px-3 text-flame-400">✕</button>
+                        <input type="text" wire:model="outcomes.{{ $i }}" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
+                        <button wire:click="removeOutcome({{ $i }})" class="rounded-lg border border-ink-200 px-3 text-flame-600">✕</button>
                     </div>
                 @endforeach
             </div>
@@ -201,16 +201,16 @@ new class extends Component
 
         {{-- FAQs --}}
         <div class="card">
-            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-white">FAQs</h3>
-                <button wire:click="addFaq" class="text-sm text-volt-400">+ Add</button></div>
+            <div class="flex items-center justify-between"><h3 class="text-base font-semibold text-ink-900">FAQs</h3>
+                <button wire:click="addFaq" class="text-sm text-volt-600">+ Add</button></div>
             <div class="mt-3 space-y-3">
                 @foreach($faqs as $i => $f)
-                    <div class="rounded-xl border border-white/10 p-3" wire:key="fq-{{ $i }}">
+                    <div class="rounded-xl border border-ink-200 p-3" wire:key="fq-{{ $i }}">
                         <div class="flex items-center gap-2">
-                            <input type="text" placeholder="Question" wire:model="faqs.{{ $i }}.q" class="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500">
-                            <button wire:click="removeFaq({{ $i }})" class="rounded-lg border border-white/10 px-3 text-flame-400">✕</button>
+                            <input type="text" placeholder="Question" wire:model="faqs.{{ $i }}.q" class="w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500">
+                            <button wire:click="removeFaq({{ $i }})" class="rounded-lg border border-ink-200 px-3 text-flame-600">✕</button>
                         </div>
-                        <textarea rows="2" placeholder="Answer" wire:model="faqs.{{ $i }}.a" class="mt-2 w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none focus:border-volt-500"></textarea>
+                        <textarea rows="2" placeholder="Answer" wire:model="faqs.{{ $i }}.a" class="mt-2 w-full rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 text-sm text-ink-900 outline-none focus:border-volt-500"></textarea>
                     </div>
                 @endforeach
             </div>

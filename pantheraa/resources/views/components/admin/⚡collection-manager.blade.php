@@ -145,7 +145,7 @@ new class extends Component
     <div class="flex items-center justify-between">
         <div>
             <h2 class="text-2xl">{{ $schema['title'] }}</h2>
-            <p class="mt-1 text-sm text-white/50">{{ $items->count() }} {{ \Illuminate\Support\Str::plural($schema['singular'], $items->count()) }} · drag-free reorder with ↑ ↓</p>
+            <p class="mt-1 text-sm text-ink-500">{{ $items->count() }} {{ \Illuminate\Support\Str::plural($schema['singular'], $items->count()) }} · drag-free reorder with ↑ ↓</p>
         </div>
         <button wire:click="create" class="btn-primary"><x-icon name="bolt" class="h-4 w-4" /> Add</button>
     </div>
@@ -157,24 +157,24 @@ new class extends Component
             <div class="mt-4 space-y-4">
                 @foreach($schema['fields'] as $f)
                     <div>
-                        <label class="mb-1.5 block text-sm font-medium text-white/80">{{ $f['label'] }}</label>
+                        <label class="mb-1.5 block text-sm font-medium text-ink-700">{{ $f['label'] }}</label>
                         @if($f['type'] === 'textarea')
                             <textarea wire:model="form.{{ $f['key'] }}" rows="3"
-                                      class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-white outline-none focus:border-volt-500"></textarea>
+                                      class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-900 outline-none focus:border-volt-500"></textarea>
                         @elseif($f['type'] === 'json')
                             <textarea wire:model="form.{{ $f['key'] }}" rows="8" spellcheck="false"
-                                      class="w-full rounded-xl border border-white/10 bg-ink-950 px-4 py-2.5 font-mono text-xs text-white outline-none focus:border-volt-500"
+                                      class="w-full rounded-xl border border-ink-200 bg-white px-4 py-2.5 font-mono text-xs text-ink-900 outline-none focus:border-volt-500"
                                       placeholder='Paste a JSON-LD object, e.g. { "name": "Acme", "url": "https://…" }'></textarea>
                         @elseif($f['type'] === 'select')
                             <select wire:model="form.{{ $f['key'] }}"
-                                    class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-white outline-none focus:border-volt-500">
-                                @foreach(($f['options'] ?? []) as $opt)<option value="{{ $opt }}" class="bg-ink-900">{{ $opt }}</option>@endforeach
+                                    class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-900 outline-none focus:border-volt-500">
+                                @foreach(($f['options'] ?? []) as $opt)<option value="{{ $opt }}" class="bg-ink-50">{{ $opt }}</option>@endforeach
                             </select>
                         @else
                             <input type="text" wire:model="form.{{ $f['key'] }}"
-                                   class="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-2.5 text-sm text-white outline-none focus:border-volt-500">
+                                   class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-900 outline-none focus:border-volt-500">
                         @endif
-                        @error('form.'.$f['key']) <p class="mt-1 text-xs text-flame-400">{{ $message }}</p> @enderror
+                        @error('form.'.$f['key']) <p class="mt-1 text-xs text-flame-600">{{ $message }}</p> @enderror
                     </div>
                 @endforeach
             </div>
@@ -186,9 +186,9 @@ new class extends Component
     @endif
 
     {{-- List --}}
-    <div class="mt-5 overflow-hidden rounded-2xl border border-white/10">
+    <div class="mt-5 overflow-hidden rounded-2xl border border-ink-200">
         <table class="w-full text-left text-sm">
-            <thead class="bg-white/[0.03] text-xs uppercase tracking-wider text-white/45">
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-400">
                 <tr>
                     @foreach($schema['columns'] as $col)
                         <th class="px-4 py-3 font-semibold">{{ \Illuminate\Support\Str::headline($col) }}</th>
@@ -197,29 +197,29 @@ new class extends Component
                     <th class="px-4 py-3 text-right font-semibold">Actions</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-white/5">
+            <tbody class="divide-y divide-ink-100">
                 @forelse($items as $row)
-                    <tr class="align-top hover:bg-white/[0.02]" wire:key="row-{{ $row->id }}">
+                    <tr class="align-top hover:bg-ink-50" wire:key="row-{{ $row->id }}">
                         @foreach($schema['columns'] as $col)
-                            <td class="px-4 py-3 text-white/80">{{ \Illuminate\Support\Str::limit((string) $row->{$col}, 70) ?: '—' }}</td>
+                            <td class="px-4 py-3 text-ink-700">{{ \Illuminate\Support\Str::limit((string) $row->{$col}, 70) ?: '—' }}</td>
                         @endforeach
                         <td class="px-4 py-3">
                             <button wire:click="toggleActive({{ $row->id }})"
-                                    class="inline-flex h-5 w-9 items-center rounded-full p-0.5 transition-colors {{ $row->is_active ? 'bg-volt-500' : 'bg-white/15' }}">
+                                    class="inline-flex h-5 w-9 items-center rounded-full p-0.5 transition-colors {{ $row->is_active ? 'bg-volt-500' : 'bg-ink-200' }}">
                                 <span class="h-4 w-4 rounded-full bg-white transition-transform {{ $row->is_active ? 'translate-x-4' : '' }}"></span>
                             </button>
                         </td>
                         <td class="px-4 py-3">
                             <div class="flex items-center justify-end gap-1.5">
-                                <button wire:click="move({{ $row->id }}, 'up')" class="rounded-lg border border-white/10 px-2 py-1 text-xs text-white/60 hover:text-white">↑</button>
-                                <button wire:click="move({{ $row->id }}, 'down')" class="rounded-lg border border-white/10 px-2 py-1 text-xs text-white/60 hover:text-white">↓</button>
-                                <button wire:click="edit({{ $row->id }})" class="rounded-lg border border-white/10 px-2.5 py-1 text-xs text-white/70 hover:text-white">Edit</button>
-                                <button wire:click="delete({{ $row->id }})" wire:confirm="Delete this {{ $schema['singular'] }}?" class="rounded-lg border border-white/10 px-2.5 py-1 text-xs text-flame-400 hover:bg-flame-500/10">Delete</button>
+                                <button wire:click="move({{ $row->id }}, 'up')" class="rounded-lg border border-ink-200 px-2 py-1 text-xs text-ink-500 hover:text-ink-900">↑</button>
+                                <button wire:click="move({{ $row->id }}, 'down')" class="rounded-lg border border-ink-200 px-2 py-1 text-xs text-ink-500 hover:text-ink-900">↓</button>
+                                <button wire:click="edit({{ $row->id }})" class="rounded-lg border border-ink-200 px-2.5 py-1 text-xs text-ink-600 hover:text-ink-900">Edit</button>
+                                <button wire:click="delete({{ $row->id }})" wire:confirm="Delete this {{ $schema['singular'] }}?" class="rounded-lg border border-ink-200 px-2.5 py-1 text-xs text-flame-600 hover:bg-flame-500/10">Delete</button>
                             </div>
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="{{ count($schema['columns']) + 2 }}" class="px-4 py-12 text-center text-white/45">Nothing yet. Click “Add”.</td></tr>
+                    <tr><td colspan="{{ count($schema['columns']) + 2 }}" class="px-4 py-12 text-center text-ink-400">Nothing yet. Click “Add”.</td></tr>
                 @endforelse
             </tbody>
         </table>

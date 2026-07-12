@@ -66,13 +66,13 @@
             <div class="orb -left-20 top-10 h-72 w-72 bg-flame-600/20"></div>
             <div class="orb -right-20 top-16 h-72 w-72 bg-volt-600/20"></div>
             <div class="container-px relative">
-                <nav class="flex items-center gap-2 text-sm text-white/45" aria-label="Breadcrumb" data-hero>
-                    <a href="/" wire:navigate class="hover:text-white">Home</a><span>/</span>
-                    <a href="/learnings" wire:navigate class="hover:text-white">Learnings</a><span>/</span>
-                    <span class="truncate text-white/70">{{ \Illuminate\Support\Str::limit($learning->title, 40) }}</span>
+                <nav class="flex items-center gap-2 text-sm text-ink-400" aria-label="Breadcrumb" data-hero>
+                    <a href="/" wire:navigate class="hover:text-ink-900">Home</a><span>/</span>
+                    <a href="/learnings" wire:navigate class="hover:text-ink-900">Learnings</a><span>/</span>
+                    <span class="truncate text-ink-600">{{ \Illuminate\Support\Str::limit($learning->title, 40) }}</span>
                 </nav>
 
-                <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-white/50" data-hero>
+                <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-500" data-hero>
                     @if($learning->category)
                         @if($learning->categoryModel)
                             <a href="/learnings/category/{{ $learning->categoryModel->slug }}" wire:navigate class="rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-3 py-1 text-xs font-semibold text-white">{{ $learning->category }}</a>
@@ -81,20 +81,20 @@
                         @endif
                     @endif
                     <span>{{ optional($learning->published_at)->format('d M Y') }}</span>
-                    <span class="h-1 w-1 rounded-full bg-white/30"></span>
+                    <span class="h-1 w-1 rounded-full bg-ink-300"></span>
                     <span>{{ $learning->reading_minutes }} min read</span>
                 </div>
 
                 <h1 class="mt-5 max-w-4xl text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl" data-hero>{{ $learning->title }}</h1>
                 @if($learning->excerpt)
-                    <p class="mt-5 max-w-2xl text-lg text-white/65" data-hero>{{ $learning->excerpt }}</p>
+                    <p class="mt-5 max-w-2xl text-lg text-ink-600" data-hero>{{ $learning->excerpt }}</p>
                 @endif
             </div>
         </header>
 
         @if($cover)
             <div class="container-px" data-reveal>
-                <img src="{{ $cover }}" alt="{{ $learning->title }}" class="aspect-[21/9] w-full rounded-3xl border border-white/10 object-cover">
+                <img src="{{ $cover }}" alt="{{ $learning->title }}" class="aspect-[21/9] w-full rounded-3xl border border-ink-200 object-cover">
             </div>
         @endif
 
@@ -106,19 +106,19 @@
                 </div>
 
                 @if($learning->tag_list)
-                    <div class="mt-10 flex flex-wrap gap-2 border-t border-white/10 pt-8">
+                    <div class="mt-10 flex flex-wrap gap-2 border-t border-ink-200 pt-8">
                         @foreach($learning->tag_list as $tag)
-                            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">#{{ $tag }}</span>
+                            <span class="rounded-full border border-ink-200 bg-ink-50 px-3 py-1 text-xs text-ink-500">#{{ $tag }}</span>
                         @endforeach
                     </div>
                 @endif
 
-                <div class="mt-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <div class="mt-10 flex items-center justify-between rounded-2xl border border-ink-200 bg-ink-50 p-6">
                     <div class="flex items-center gap-3">
-                        <x-panther class="h-10 w-10 text-white" />
+                        <x-panther class="h-10 w-10 text-ink-900" />
                         <div>
-                            <div class="text-sm font-semibold text-white">{{ $s['name'] }}</div>
-                            <div class="text-xs text-white/50">{{ $s['tagline'] }}</div>
+                            <div class="text-sm font-semibold text-ink-900">{{ $s['name'] }}</div>
+                            <div class="text-xs text-ink-500">{{ $s['tagline'] }}</div>
                         </div>
                     </div>
                     <a href="/contact" wire:navigate class="btn-primary">Work with us <x-icon name="arrow" class="h-4 w-4" /></a>
@@ -138,12 +138,12 @@
                                     @if($r->cover_url)
                                         <img src="{{ $r->cover_url }}" alt="{{ $r->title }}" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
                                     @else
-                                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-flame-600/30 to-volt-600/30"><x-panther class="h-12 w-12 text-white/80" /></div>
+                                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-flame-600/30 to-volt-600/30"><x-panther class="h-12 w-12 text-ink-700" /></div>
                                     @endif
                                 </div>
                                 <div class="p-5">
-                                    @if($r->category)<span class="text-xs font-semibold text-steel-400">{{ $r->category }}</span>@endif
-                                    <h3 class="mt-1 text-base leading-snug text-white group-hover:text-volt-300">{{ $r->title }}</h3>
+                                    @if($r->category)<span class="text-xs font-semibold text-steel-600">{{ $r->category }}</span>@endif
+                                    <h3 class="mt-1 text-base leading-snug text-ink-900 group-hover:text-volt-600">{{ $r->title }}</h3>
                                 </div>
                             </a>
                         @endforeach

@@ -13,16 +13,16 @@
             @foreach($testimonials as $t)
                 <figure class="card flex flex-col justify-between">
                     <div>
-                        <div class="text-flame-400" aria-hidden="true">★★★★★</div>
-                        <blockquote class="mt-4 text-lg leading-relaxed text-white/85">“{{ $t['quote'] }}”</blockquote>
+                        <div class="text-flame-600" aria-hidden="true">★★★★★</div>
+                        <blockquote class="mt-4 text-lg leading-relaxed text-ink-700">“{{ $t['quote'] }}”</blockquote>
                     </div>
                     <figcaption class="mt-7 flex items-center gap-3">
                         <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-flame-500 to-volt-500 font-display font-bold text-white">
                             {{ \Illuminate\Support\Str::of($t['name'])->explode(' ')->map(fn($w) => $w[0])->take(2)->implode('') }}
                         </span>
                         <span>
-                            <span class="block text-sm font-semibold text-white">{{ $t['name'] }}</span>
-                            <span class="block text-xs text-white/50">{{ $t['role'] }}</span>
+                            <span class="block text-sm font-semibold text-ink-900">{{ $t['name'] }}</span>
+                            <span class="block text-xs text-ink-500">{{ $t['role'] }}</span>
                         </span>
                     </figcaption>
                 </figure>

@@ -9,7 +9,7 @@
     ];
 @endphp
 
-<section id="ai" class="section relative overflow-hidden border-y border-white/10 bg-ink-900/60">
+<section id="ai" class="section relative overflow-hidden border-y border-ink-200 bg-ink-50">
     <div class="orb -left-20 top-10 h-80 w-80 bg-volt-600/20" data-parallax="0.06"></div>
     <div class="orb -right-24 bottom-0 h-80 w-80 bg-flame-600/20" data-parallax="0.1"></div>
 
@@ -24,8 +24,8 @@
                 <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl" data-reveal>
                     AI that does the work — <span class="text-gradient">not just the talk.</span>
                 </h2>
-                <p class="mt-4 max-w-xl text-white/60" data-reveal>
-                    Beyond marketing, we <span class="font-semibold text-white">build AI products</span>:
+                <p class="mt-4 max-w-xl text-ink-500" data-reveal>
+                    Beyond marketing, we <span class="font-semibold text-ink-900">build AI products</span>:
                     chatbots, autonomous agents and custom tools trained on your data — deployed on your
                     site, WhatsApp or internal stack to automate sales, support and operations.
                 </p>
@@ -33,12 +33,12 @@
                 <div class="mt-9 grid gap-4 sm:grid-cols-2" data-stagger>
                     @foreach($capabilities as $cap)
                         <div class="flex items-start gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-white/10 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-white">
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
                                 <x-icon :name="$cap['icon']" class="h-5 w-5" />
                             </span>
                             <div>
-                                <h3 class="text-base font-semibold text-white">{{ $cap['title'] }}</h3>
-                                <p class="mt-0.5 text-sm leading-snug text-white/55">{{ $cap['desc'] }}</p>
+                                <h3 class="text-base font-semibold text-ink-900">{{ $cap['title'] }}</h3>
+                                <p class="mt-0.5 text-sm leading-snug text-ink-500">{{ $cap['desc'] }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -55,15 +55,15 @@
                 <div class="relative mx-auto max-w-sm">
                     <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-flame-600/25 to-volt-600/25 blur-2xl"></div>
 
-                    <div class="overflow-hidden rounded-3xl border border-white/10 bg-ink-950/80 shadow-2xl backdrop-blur">
+                    <div class="overflow-hidden rounded-3xl border border-ink-200 bg-white/85 shadow-2xl backdrop-blur">
                         {{-- Header --}}
-                        <div class="flex items-center gap-3 border-b border-white/10 bg-white/[0.03] px-5 py-4">
-                            <span class="relative grid h-9 w-9 place-items-center rounded-lg bg-ink-800">
-                                <x-panther class="h-6 w-6 text-white" />
+                        <div class="flex items-center gap-3 border-b border-ink-200 bg-ink-50 px-5 py-4">
+                            <span class="relative grid h-9 w-9 place-items-center rounded-lg bg-ink-100">
+                                <x-panther class="h-6 w-6 text-ink-900" />
                             </span>
                             <div>
-                                <div class="text-sm font-semibold text-white">Pantheraa AI</div>
-                                <div class="flex items-center gap-1.5 text-xs text-white/50">
+                                <div class="text-sm font-semibold text-ink-900">Pantheraa AI</div>
+                                <div class="flex items-center gap-1.5 text-xs text-ink-500">
                                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-green-400"></span> Online now
                                 </div>
                             </div>
@@ -71,26 +71,26 @@
 
                         {{-- Messages --}}
                         <div class="space-y-3 p-5">
-                            <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/85">
+                            <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-700">
                                 Hi! 👋 I'm your AI assistant. How can I help grow your business today?
                             </div>
                             <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-gradient-to-r from-flame-500 to-volt-500 px-4 py-2.5 text-sm text-white">
                                 Can you qualify and book leads 24/7?
                             </div>
-                            <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white/85">
+                            <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-700">
                                 Absolutely. I capture, qualify and book meetings automatically — even at 3 AM. 🚀
                             </div>
                             {{-- typing indicator --}}
-                            <div class="flex w-fit items-center gap-1.5 rounded-2xl rounded-tl-sm border border-white/10 bg-white/5 px-4 py-3">
-                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-white/60" style="animation-delay:0ms"></span>
-                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-white/60" style="animation-delay:150ms"></span>
-                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-white/60" style="animation-delay:300ms"></span>
+                            <div class="flex w-fit items-center gap-1.5 rounded-2xl rounded-tl-sm border border-ink-200 bg-ink-50 px-4 py-3">
+                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-ink-400" style="animation-delay:0ms"></span>
+                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-ink-400" style="animation-delay:150ms"></span>
+                                <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-ink-400" style="animation-delay:300ms"></span>
                             </div>
                         </div>
 
                         {{-- Input bar --}}
-                        <div class="flex items-center gap-2 border-t border-white/10 px-4 py-3">
-                            <div class="flex-1 rounded-full border border-white/10 bg-ink-900 px-4 py-2 text-sm text-white/40">Ask anything…</div>
+                        <div class="flex items-center gap-2 border-t border-ink-200 px-4 py-3">
+                            <div class="flex-1 rounded-full border border-ink-200 bg-ink-50 px-4 py-2 text-sm text-ink-400">Ask anything…</div>
                             <span class="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-r from-flame-500 to-volt-500 text-white">
                                 <x-icon name="arrow" class="h-4 w-4" />
                             </span>

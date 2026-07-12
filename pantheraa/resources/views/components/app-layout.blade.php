@@ -41,7 +41,7 @@
     @else
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     @endif
-    <meta name="theme-color" content="#050507">
+    <meta name="theme-color" content="#ffffff">
     <meta name="author" content="{{ $seo['author_name'] ?? $s['name'] }}">
 
     {{-- Open Graph --}}
@@ -93,11 +93,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="min-h-screen bg-ink-950 text-[#e6e8ef] antialiased selection:bg-flame-500">
+<body class="min-h-screen bg-white text-ink-600 antialiased selection:bg-flame-500">
     {!! \App\Support\Tracking::bodyOpen() !!}
 
     {{-- Skip link for a11y --}}
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-ink-950">Skip to content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink-50 focus:px-4 focus:py-2 focus:text-ink-900">Skip to content</a>
 
     {{-- Scroll progress --}}
     <div class="fixed inset-x-0 top-0 z-[55] h-0.5 origin-left" id="scroll-progress"

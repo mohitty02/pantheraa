@@ -1,4 +1,4 @@
-@props(['class' => 'h-10 w-10 text-white'])
+@props(['class' => 'h-10 w-10 text-ink-900'])
 
 {{-- Panther mark traced from the Pantheraa Space logo. Body uses currentColor
      (set via Tailwind text-* utility); eyes carry the brand red + blue. --}}
