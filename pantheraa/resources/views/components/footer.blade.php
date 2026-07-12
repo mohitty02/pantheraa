@@ -38,7 +38,7 @@
                 <ul class="mt-5 space-y-3 text-sm">
                     <li><a href="/about" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">About</a></li>
                     <li><a href="/learnings" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">Learnings</a></li>
-                    <li><a href="/#work" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">Work</a></li>
+                    <li><a href="/portfolio" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">Portfolio</a></li>
                     <li><a href="/#faq" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">FAQ</a></li>
                     <li><a href="/contact" wire:navigate class="text-ink-500 transition-colors hover:text-ink-900">Contact</a></li>
                 </ul>

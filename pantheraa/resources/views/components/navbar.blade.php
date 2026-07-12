@@ -4,7 +4,7 @@
         ['label' => 'AI',        'href' => '/#ai'],
         ['label' => 'Learnings', 'href' => '/learnings'],
         ['label' => 'About',     'href' => '/about'],
-        ['label' => 'Work',      'href' => '/#work'],
+        ['label' => 'Portfolio', 'href' => '/portfolio'],
         ['label' => 'FAQ',       'href' => '/#faq'],
     ];
 @endphp

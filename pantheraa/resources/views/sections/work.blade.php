@@ -11,8 +11,8 @@
                     Results we're <span class="text-gradient">proud to hunt down.</span>
                 </h2>
             </div>
-            <a href="/contact" wire:navigate class="btn-ghost shrink-0">
-                Become our next case study
+            <a href="/portfolio" wire:navigate class="btn-ghost shrink-0">
+                See the proof
                 <x-icon name="arrow" class="h-4 w-4" />
             </a>
         </div>

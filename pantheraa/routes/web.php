@@ -16,6 +16,7 @@ Route::get('/services/{slug}', function (string $slug) {
     return view('service-detail', ['service' => $service]);
 })->where('slug', '[a-z0-9-]+')->name('services.show');
 
+Route::view('/portfolio', 'portfolio')->name('portfolio');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 
@@ -102,6 +103,7 @@ Route::get('/sitemap.xml', function () {
         ['loc' => url('/services'), 'priority' => '0.9', 'freq' => 'monthly'],
         ['loc' => url('/about'),    'priority' => '0.7', 'freq' => 'monthly'],
         ['loc' => url('/contact'),  'priority' => '0.8', 'freq' => 'monthly'],
+        ['loc' => url('/portfolio'),'priority' => '0.9', 'freq' => 'monthly'],
         ['loc' => url('/privacy'),  'priority' => '0.3', 'freq' => 'yearly'],
         ['loc' => url('/terms'),    'priority' => '0.3', 'freq' => 'yearly'],
     ];
