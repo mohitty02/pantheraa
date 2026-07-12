@@ -37,6 +37,7 @@
     :schema="$pageSchema"
 >
     @include('sections.hero')
+    @include('sections.trust')
     @include('sections.stats')
     @include('sections.services')
     @include('sections.ai')

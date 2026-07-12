@@ -20,9 +20,24 @@
             ['@type' => 'ListItem', 'position' => 3, 'name' => $learning->title, 'item' => $learning->url],
         ],
     ];
-    $authorName = config('site.seo.author_name') ?: $s['name'];
-    $author = config('site.seo.author_name')
-        ? ['@type' => 'Person', 'name' => $authorName]
+    // E-E-A-T: a named, credentialed human is a far stronger authorship signal
+    // than a faceless brand. Falls back to the Organization if no author is set.
+    $authorName  = config('site.seo.author_name');
+    $authorRole  = config('site.seo.author_role');
+    $authorBio   = config('site.seo.author_bio');
+    $authorImage = config('site.seo.author_image');
+    $authorUrl   = config('site.seo.author_url') ?: url('/about');
+
+    $author = $authorName
+        ? array_filter([
+            '@type'       => 'Person',
+            'name'        => $authorName,
+            'jobTitle'    => $authorRole ?: null,
+            'description' => $authorBio ?: null,
+            'image'       => $authorImage ?: null,
+            'url'         => $authorUrl,
+            'worksFor'    => ['@type' => 'Organization', 'name' => $s['name'], '@id' => $org],
+        ])
         : ['@type' => 'Organization', 'name' => $s['name'], '@id' => $org];
 
     $article = array_filter([
@@ -80,7 +95,15 @@
                             <span class="rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-3 py-1 text-xs font-semibold text-white">{{ $learning->category }}</span>
                         @endif
                     @endif
+                    @if($authorName)
+                        <span>By <span class="font-semibold text-ink-800">{{ $authorName }}</span></span>
+                        <span class="h-1 w-1 rounded-full bg-ink-300"></span>
+                    @endif
                     <span>{{ optional($learning->published_at)->format('d M Y') }}</span>
+                    @if($learning->updated_at && $learning->published_at && $learning->updated_at->gt($learning->published_at->addDay()))
+                        <span class="h-1 w-1 rounded-full bg-ink-300"></span>
+                        <span>Updated {{ $learning->updated_at->format('d M Y') }}</span>
+                    @endif
                     <span class="h-1 w-1 rounded-full bg-ink-300"></span>
                     <span>{{ $learning->reading_minutes }} min read</span>
                 </div>
@@ -113,15 +136,34 @@
                     </div>
                 @endif
 
-                <div class="mt-10 flex items-center justify-between rounded-2xl border border-ink-200 bg-ink-50 p-6">
-                    <div class="flex items-center gap-3">
-                        <x-panther class="h-10 w-10 text-ink-900" />
-                        <div>
-                            <div class="text-sm font-semibold text-ink-900">{{ $s['name'] }}</div>
-                            <div class="text-xs text-ink-500">{{ $s['tagline'] }}</div>
+                {{-- E-E-A-T: author box — who wrote this, and why they are worth trusting --}}
+                <div class="mt-10 rounded-2xl border border-ink-200 bg-ink-50 p-6">
+                    <div class="flex flex-col gap-5 sm:flex-row sm:items-start">
+                        <span class="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-full border border-ink-200 bg-white">
+                            @if($authorImage)
+                                <img src="{{ $authorImage }}" alt="{{ $authorName }}" class="h-full w-full object-cover">
+                            @else
+                                <x-panther class="h-9 w-9 text-ink-900" />
+                            @endif
+                        </span>
+                        <div class="min-w-0 flex-1">
+                            <div class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-400">Written by</div>
+                            <div class="mt-1 text-base font-semibold text-ink-900">{{ $authorName ?: $s['name'] }}</div>
+                            @if($authorRole)
+                                <div class="text-sm text-steel-600">{{ $authorRole }}</div>
+                            @endif
+                            <p class="mt-2 text-sm leading-relaxed text-ink-600">
+                                {{ $authorBio ?: $s['short_desc'] }}
+                            </p>
                         </div>
                     </div>
-                    <a href="/contact" wire:navigate class="btn-primary">Work with us <x-icon name="arrow" class="h-4 w-4" /></a>
+
+                    <div class="mt-5 flex flex-col gap-3 border-t border-ink-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                        <p class="text-sm text-ink-500">Want this done for your business?</p>
+                        <a href="/contact" wire:navigate class="btn-primary shrink-0">
+                            Get a free audit <x-icon name="arrow" class="h-4 w-4" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

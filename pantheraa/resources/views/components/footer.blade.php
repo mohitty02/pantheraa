@@ -69,6 +69,10 @@
 
         <div class="mt-7 flex flex-col items-center justify-between gap-4 text-xs text-ink-400 sm:flex-row">
             <p>&copy; {{ date('Y') }} {{ $s['legal_name'] }}. All rights reserved.</p>
+            <div class="flex items-center gap-5">
+                <a href="/privacy" wire:navigate class="transition-colors hover:text-ink-900">Privacy Policy</a>
+                <a href="/terms" wire:navigate class="transition-colors hover:text-ink-900">Terms of Service</a>
+            </div>
         </div>
     </div>
 </footer>

@@ -40,19 +40,16 @@
                     </a>
                 </div>
 
-                <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-ink-500" data-hero>
-                    <div class="flex items-center gap-2">
-                        <div class="flex -space-x-2">
-                            <span class="h-7 w-7 rounded-full border-2 border-white bg-flame-500"></span>
-                            <span class="h-7 w-7 rounded-full border-2 border-white bg-volt-500"></span>
-                            <span class="h-7 w-7 rounded-full border-2 border-white bg-steel-400"></span>
-                        </div>
-                        <span><span class="font-semibold text-ink-900">65+ brands</span> scaled</span>
-                    </div>
-                    <div class="flex items-center gap-1.5">
-                        <span class="text-flame-600">★★★★★</span>
-                        <span><span class="font-semibold text-ink-900">4.9/5</span> avg rating</span>
-                    </div>
+                {{-- CRO: risk reversal directly under the CTA, where hesitation happens.
+                     Only claims we can actually keep — no invented social proof. --}}
+                <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-500" data-hero>
+                    @foreach(['Free audit — no obligation', 'No lock-in contracts', 'Reply in 1 business day'] as $i => $promise)
+                        @if($i > 0)<span class="hidden h-1 w-1 rounded-full bg-ink-300 sm:block"></span>@endif
+                        <span class="flex items-center gap-1.5">
+                            <x-icon name="check" class="h-4 w-4 text-flame-600" />
+                            {{ $promise }}
+                        </span>
+                    @endforeach
                 </div>
             </div>
 

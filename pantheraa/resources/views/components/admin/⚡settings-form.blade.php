@@ -48,6 +48,10 @@ new class extends Component
             'seo_default_image'       => $g('seo_default_image', ''),
             'seo_twitter_site'        => $g('seo_twitter_site', ''),
             'seo_author_name'         => $g('seo_author_name', $site['name'] ?? ''),
+            'seo_author_role'         => $g('seo_author_role', ''),
+            'seo_author_bio'          => $g('seo_author_bio', ''),
+            'seo_author_image'        => $g('seo_author_image', ''),
+            'seo_author_url'          => $g('seo_author_url', ''),
 
             // Tracking
             'gsc_verification' => $g('gsc_verification', ''),
@@ -75,7 +79,8 @@ new class extends Component
 
         foreach ([
             'name', 'tagline', 'legal_name', 'short_desc', 'founded', 'email', 'phone', 'phone_link', 'hours', 'price_range', 'learnings_tagline',
-            'seo_title_suffix', 'seo_default_description', 'seo_default_image', 'seo_twitter_site', 'seo_author_name',
+            'seo_title_suffix', 'seo_default_description', 'seo_default_image', 'seo_twitter_site',
+            'seo_author_name', 'seo_author_role', 'seo_author_bio', 'seo_author_image', 'seo_author_url',
             'gsc_verification', 'ga4_id', 'gtm_id', 'meta_pixel_id', 'clarity_id', 'hotjar_id',
         ] as $k) {
             Setting::put($k, $this->f[$k]);
@@ -158,7 +163,21 @@ new class extends Component
             <x-admin.field wire="f.seo_twitter_site" label="Twitter/X handle" ph="@pantheraaspace" />
             <div class="sm:col-span-2"><x-admin.field wire="f.seo_default_description" label="Default meta description" type="textarea" /></div>
             <div class="sm:col-span-2"><x-admin.field wire="f.seo_default_image" label="Default share image URL (1200×630)" ph="https://…/og.jpg" /></div>
-            <x-admin.field wire="f.seo_author_name" label="Default author name" />
+        </div>
+    </section>
+
+    <section class="card">
+        <h3 class="text-lg">Author &amp; E-E-A-T</h3>
+        <p class="mt-1 text-sm text-ink-500">
+            Google rewards content written by a <strong>real, named, credentialed human</strong>. This appears as the
+            byline and author box on every blog post, and as <code>Person</code> schema.
+        </p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <x-admin.field wire="f.seo_author_name" label="Author name" ph="Mohit Kumar" />
+            <x-admin.field wire="f.seo_author_role" label="Role / credentials" ph="Founder & Growth Lead · 6+ yrs in SEO" />
+            <div class="sm:col-span-2"><x-admin.field wire="f.seo_author_bio" label="Short bio (2 lines — experience & expertise)" type="textarea" /></div>
+            <x-admin.field wire="f.seo_author_image" label="Author photo URL" ph="https://…/author.jpg" />
+            <x-admin.field wire="f.seo_author_url" label="Author profile URL (LinkedIn)" ph="https://linkedin.com/in/…" />
         </div>
     </section>
 

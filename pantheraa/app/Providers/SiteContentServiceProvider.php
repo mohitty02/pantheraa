@@ -83,7 +83,19 @@ class SiteContentServiceProvider extends ServiceProvider
             'default_description' => $s['seo_default_description'] ?? '',
             'default_image'       => $s['seo_default_image'] ?? '',
             'twitter_site'        => $s['seo_twitter_site'] ?? '',
+            // E-E-A-T: a real, named human behind the content
             'author_name'         => $s['seo_author_name'] ?? '',
+            'author_role'         => $s['seo_author_role'] ?? '',
+            'author_bio'          => $s['seo_author_bio'] ?? '',
+            'author_image'        => $s['seo_author_image'] ?? '',
+            'author_url'          => $s['seo_author_url'] ?? '',
+        ];
+
+        // ---- Trust / CRO signals (shown near every CTA) ----
+        $out['trust'] = [
+            'markers'  => is_array($s['trust_markers'] ?? null) ? $s['trust_markers'] : [],
+            'badges'   => is_array($s['trust_badges'] ?? null) ? $s['trust_badges'] : [],
+            'reassure' => $s['trust_reassure'] ?? '',
         ];
 
         // ---- Services ----

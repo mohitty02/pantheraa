@@ -19,6 +19,10 @@ Route::get('/services/{slug}', function (string $slug) {
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 
+// Legal / trust pages (E-E-A-T + required by Google & Meta ad accounts)
+Route::view('/privacy', 'legal.privacy')->name('privacy');
+Route::view('/terms', 'legal.terms')->name('terms');
+
 /*
 | Learnings — public blog
 */
@@ -98,6 +102,8 @@ Route::get('/sitemap.xml', function () {
         ['loc' => url('/services'), 'priority' => '0.9', 'freq' => 'monthly'],
         ['loc' => url('/about'),    'priority' => '0.7', 'freq' => 'monthly'],
         ['loc' => url('/contact'),  'priority' => '0.8', 'freq' => 'monthly'],
+        ['loc' => url('/privacy'),  'priority' => '0.3', 'freq' => 'yearly'],
+        ['loc' => url('/terms'),    'priority' => '0.3', 'freq' => 'yearly'],
     ];
 
     // each service detail page

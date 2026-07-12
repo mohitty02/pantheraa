@@ -1,11 +1,7 @@
-@php
-    $cases = config('site.cases', [
-        ['client' => 'FinFlow SaaS',    'industry' => 'B2B SaaS',     'metric' => '+312%', 'kpi' => 'organic demos', 'desc' => 'Topic-cluster SEO + AEO turned organic search into the #1 demo source in two quarters.', 'tags' => ['SEO', 'AEO']],
-        ['client' => 'Lumen Skincare',  'industry' => 'D2C Beauty',   'metric' => '5.3x',  'kpi' => 'blended ROAS', 'desc' => 'Creative-led Meta & Google scaling lifted ROAS from 1.9x to 5.3x at 4x the spend.', 'tags' => ['Paid Media', 'Social']],
-        ['client' => 'Vault Commerce',  'industry' => 'Marketplace',  'metric' => '#1',    'kpi' => 'in AI answers', 'desc' => 'GEO + schema work earned consistent citations inside ChatGPT and Google AI Overviews.', 'tags' => ['GEO', 'Web']],
-    ]);
-@endphp
+@php $cases = config('site.cases', []); @endphp
 
+{{-- E-E-A-T: real case studies only. No clients yet? Show nothing rather than fiction. --}}
+@if(!empty($cases))
 <section id="work" class="section">
     <div class="container-px">
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end" data-reveal>
@@ -47,3 +43,4 @@
         </div>
     </div>
 </section>
+@endif

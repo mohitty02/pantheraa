@@ -146,7 +146,12 @@ new class extends Component
                 </span>
             </button>
 
-            <p class="text-xs text-ink-400">We reply within 1 business day. Your details stay private.</p>
+            {{-- CRO: kill the last objections right at the submit button --}}
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink-500">
+                <span class="flex items-center gap-1.5"><x-icon name="shield" class="h-4 w-4 text-flame-600" /> Your details stay private — no spam</span>
+                <span class="flex items-center gap-1.5"><x-icon name="bolt" class="h-4 w-4 text-flame-600" /> Reply within 1 business day</span>
+                <span class="flex items-center gap-1.5"><x-icon name="check" class="h-4 w-4 text-flame-600" /> Free audit, no obligation</span>
+            </div>
         </form>
     @endif
 </div>

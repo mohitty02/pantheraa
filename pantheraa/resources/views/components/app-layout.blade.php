@@ -112,6 +112,7 @@
     <x-footer />
 
     <x-whatsapp-cta />
+    <x-mobile-cta-bar />
 
     @livewireScripts
 </body>

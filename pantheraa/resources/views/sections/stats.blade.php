@@ -1,4 +1,7 @@
-@php $stats = config('site.stats'); @endphp
+@php $stats = config('site.stats', []); @endphp
+
+{{-- E-E-A-T: numbers must be real and defensible. None yet? Hide the section. --}}
+@if(!empty($stats))
 
 <section class="relative overflow-hidden border-y border-ink-200 bg-ink-50 py-16">
     <div class="orb left-1/2 top-0 h-60 w-[40rem] -translate-x-1/2 bg-volt-600/10"></div>
@@ -15,3 +18,4 @@
         </div>
     </div>
 </section>
+@endif

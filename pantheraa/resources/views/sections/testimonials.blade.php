@@ -1,4 +1,8 @@
-@php $testimonials = config('site.testimonials'); @endphp
+@php $testimonials = config('site.testimonials', []); @endphp
+
+{{-- E-E-A-T: only ever show REAL testimonials. If there are none yet, show nothing —
+     an empty section is honest; a fabricated one destroys trust (and can be detected). --}}
+@if(!empty($testimonials))
 
 <section class="section">
     <div class="container-px">
@@ -30,3 +34,4 @@
         </div>
     </div>
 </section>
+@endif

@@ -44,12 +44,9 @@ return [
     ],
 
     // ---- Headline numbers ---------------------------------------------
-    'stats' => [
-        ['value' => 320, 'suffix' => '+',  'label' => 'Campaigns launched'],
-        ['value' => 4.8, 'suffix' => 'x',  'label' => 'Average client ROAS'],
-        ['value' => 98,  'suffix' => '%',  'label' => 'Client retention'],
-        ['value' => 65,  'suffix' => '+',  'label' => 'Brands scaled'],
-    ],
+    // E-E-A-T: numbers here must be REAL and defensible. Add them from
+    // Admin → Stats once you can back them up. Empty = the section is hidden.
+    'stats' => [],
 
     // ---- Services ------------------------------------------------------
     'services' => [
@@ -212,11 +209,10 @@ return [
     ],
 
     // ---- Testimonials --------------------------------------------------
-    'testimonials' => [
-        ['quote' => 'Pantheraa Space took us from invisible to page one in two quarters. Organic now drives 60% of our demos.', 'name' => 'Aarav Mehta', 'role' => 'Founder, FinFlow SaaS'],
-        ['quote' => 'They are the first agency that actually understood AI search. We now show up inside ChatGPT answers for our category.', 'name' => 'Sara Khan', 'role' => 'CMO, Lumen Skincare'],
-        ['quote' => 'ROAS jumped from 1.9x to 5.3x in 90 days. Reporting is brutally honest and the team feels in-house.', 'name' => 'Daniel Roberts', 'role' => 'Growth Lead, Vault Commerce'],
-    ],
+    // E-E-A-T: ONLY real testimonials, from real clients, with their permission.
+    // Fabricated social proof is detectable, damages trust and is legally risky.
+    // Add them from Admin → Testimonials. Empty = the section is hidden.
+    'testimonials' => [],
 
     // ---- FAQ (also rendered as FAQPage JSON-LD for AEO) ---------------
     'faqs' => [
