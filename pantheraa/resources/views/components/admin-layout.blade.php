@@ -43,6 +43,7 @@
                                 ['label' => 'FAQs', 'href' => '/admin/content/faqs', 'icon' => 'spark', 'match' => 'admin/content/faqs'],
                                 ['label' => 'Process', 'href' => '/admin/content/process', 'icon' => 'workflow', 'match' => 'admin/content/process'],
                                 ['label' => 'Case studies', 'href' => '/admin/content/cases', 'icon' => 'target', 'match' => 'admin/content/cases'],
+                                ['label' => 'Websites built', 'href' => '/admin/content/websites', 'icon' => 'code', 'match' => 'admin/content/websites'],
                             ],
                             'SEO' => [
                                 ['label' => 'Redirects', 'href' => '/admin/content/redirects', 'icon' => 'workflow', 'match' => 'admin/content/redirects'],

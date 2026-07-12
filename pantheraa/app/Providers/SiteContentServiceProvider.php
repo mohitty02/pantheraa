@@ -158,6 +158,18 @@ class SiteContentServiceProvider extends ServiceProvider
             ])->all();
         }
 
+        // ---- Websites we built (portfolio) ----
+        $websites = \App\Models\Website::active()->get();
+        if ($websites->isNotEmpty()) {
+            $out['websites'] = $websites->map(fn ($w) => [
+                'name'        => $w->name,
+                'url'         => $w->url,
+                'domain'      => $w->domain,
+                'industry'    => $w->industry,
+                'description' => $w->description,
+            ])->all();
+        }
+
         // ---- Case studies ----
         $cases = CaseStudy::active()->get();
         if ($cases->isNotEmpty()) {

@@ -67,6 +67,20 @@ return [
                 ['key' => 'description', 'label' => 'Description', 'type' => 'textarea', 'rules' => 'nullable|string|max:500'],
             ],
         ],
+        'websites' => [
+            'model'    => App\Models\Website::class,
+            'title'    => 'Websites built',
+            'singular' => 'website',
+            'icon'     => 'code',
+            'primary'  => 'name',
+            'columns'  => ['name', 'url', 'industry'],
+            'fields'   => [
+                ['key' => 'name',        'label' => 'Brand / site name', 'type' => 'text', 'rules' => 'required|string|max:120'],
+                ['key' => 'url',         'label' => 'Website URL', 'type' => 'text', 'rules' => 'required|string|max:255'],
+                ['key' => 'industry',    'label' => 'Industry / category', 'type' => 'text', 'rules' => 'nullable|string|max:80'],
+                ['key' => 'description', 'label' => 'One-line description', 'type' => 'textarea', 'rules' => 'nullable|string|max:300'],
+            ],
+        ],
         'cases' => [
             'model'    => CaseStudy::class,
             'title'    => 'Case studies',

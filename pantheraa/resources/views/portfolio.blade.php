@@ -80,6 +80,56 @@
         </section>
     @endif
 
+    {{-- Websites we've built --}}
+    @php $websites = config('site.websites', []); @endphp
+    @if(!empty($websites))
+        <section class="section border-t border-ink-200 pt-16">
+            <div class="container-px">
+                <div class="mx-auto max-w-2xl text-center" data-reveal>
+                    <span class="kicker">Websites we've built</span>
+                    <h2 class="mt-5 text-3xl sm:text-4xl">
+                        {{ count($websites) }} brands, <span class="text-gradient-flame">live on the web.</span>
+                    </h2>
+                    <p class="mt-4 text-ink-500">
+                        From luxury fragrance houses to dental clinics, longevity labs and manufacturers —
+                        every one of these is live. Click through and see for yourself.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
+                    @foreach($websites as $w)
+                        <a href="{{ $w['url'] }}" target="_blank" rel="noopener nofollow"
+                           class="card group flex flex-col !p-6">
+                            <div class="flex items-start justify-between gap-3">
+                                <h3 class="text-lg font-semibold text-ink-900 group-hover:text-volt-700">{{ $w['name'] }}</h3>
+                                <span class="mt-1 shrink-0 text-ink-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                                    <x-icon name="arrow" class="h-4 w-4 -rotate-45" />
+                                </span>
+                            </div>
+
+                            @if(!empty($w['industry']))
+                                <span class="mt-2 w-fit rounded-full border border-ink-200 bg-ink-50 px-2.5 py-0.5 text-[11px] font-semibold text-steel-600">
+                                    {{ $w['industry'] }}
+                                </span>
+                            @endif
+
+                            @if(!empty($w['description']))
+                                <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-600">{{ $w['description'] }}</p>
+                            @else
+                                <div class="flex-1"></div>
+                            @endif
+
+                            <span class="mt-4 flex items-center gap-1.5 text-xs font-medium text-ink-400">
+                                <x-icon name="code" class="h-3.5 w-3.5" />
+                                {{ $w['domain'] }}
+                            </span>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
     {{-- Proof gallery --}}
     @if(!empty($proofs))
         <section class="relative overflow-hidden border-y border-ink-200 bg-ink-50 py-16 sm:py-24"
