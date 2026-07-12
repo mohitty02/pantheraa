@@ -42,9 +42,24 @@
                 <span class="text-gradient">Receipts included.</span>
             </h1>
             <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-600" data-hero>
-                We don't ask you to take our word for it. Every number below comes straight from the client's
-                Google Search Console, Analytics or Business Profile — screenshots and all.
+                <span class="font-semibold text-ink-900">400+ websites built</span> and counting. Below is just a
+                selection — and every number comes straight from the client's own Google Search Console,
+                Analytics or Business Profile. Screenshots and all.
             </p>
+
+            <div class="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-ink-500" data-hero>
+                @foreach([
+                    ['400+', 'websites built'],
+                    ['16M+', 'search impressions'],
+                    ['620K+', 'organic clicks'],
+                    ['3', 'countries'],
+                ] as $f)
+                    <span class="flex items-baseline gap-1.5">
+                        <span class="font-display text-xl font-bold text-gradient">{{ $f[0] }}</span>
+                        <span>{{ $f[1] }}</span>
+                    </span>
+                @endforeach
+            </div>
         </div>
     </section>
 
@@ -52,7 +67,16 @@
     @if(!empty($cases))
         <section class="section pt-8">
             <div class="container-px">
-                <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
+                <div class="mx-auto max-w-2xl text-center" data-reveal>
+                    <span class="kicker">Selected results</span>
+                    <h2 class="mt-5 text-3xl sm:text-4xl">A few we're allowed to <span class="text-gradient-flame">talk about.</span></h2>
+                    <p class="mt-4 text-ink-500">
+                        Most of our work sits under NDA. Here are some of the accounts we can show you —
+                        with the dashboard screenshots to back every number.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
                     @foreach($cases as $c)
                         <article class="card group flex flex-col">
                             <div class="flex items-center justify-between gap-3">
@@ -88,11 +112,11 @@
                 <div class="mx-auto max-w-2xl text-center" data-reveal>
                     <span class="kicker">Websites we've built</span>
                     <h2 class="mt-5 text-3xl sm:text-4xl">
-                        {{ count($websites) }} brands, <span class="text-gradient-flame">live on the web.</span>
+                        400+ websites built. <span class="text-gradient-flame">Here are a few.</span>
                     </h2>
                     <p class="mt-4 text-ink-500">
-                        From luxury fragrance houses to dental clinics, longevity labs and manufacturers —
-                        every one of these is live. Click through and see for yourself.
+                        Luxury fragrance houses, dental clinics, longevity labs, manufacturers, D2C brands —
+                        {{ count($websites) }} of them below, all live. Click through and judge for yourself.
                     </p>
                 </div>
 
@@ -140,8 +164,8 @@
                     <span class="kicker">The receipts</span>
                     <h2 class="mt-5 text-3xl sm:text-4xl">Straight from the <span class="text-gradient-flame">client dashboards.</span></h2>
                     <p class="mt-4 text-ink-500">
-                        {{ count($proofs) }} unedited screenshots — Search Console, Analytics and Google Business Profile.
-                        Click any one to view it full size.
+                        A sample of {{ count($proofs) }} unedited screenshots — Search Console, Analytics and Google
+                        Business Profile, pulled from the accounts we manage. Click any one to view it full size.
                     </p>
                 </div>
 

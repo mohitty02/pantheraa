@@ -22,10 +22,10 @@ class RealProofSeeder extends Seeder
         // ── Real, defensible headline numbers (aggregated from client data) ──
         Stat::query()->delete();
         $stats = [
+            ['value' => '400', 'suffix' => '+',  'label' => 'Websites built'],
             ['value' => '16',  'suffix' => 'M+', 'label' => 'Search impressions generated'],
             ['value' => '620', 'suffix' => 'K+', 'label' => 'Organic clicks delivered'],
             ['value' => '99',  'suffix' => 'K+', 'label' => 'Google Business Profile views'],
-            ['value' => '6',   'suffix' => '',   'label' => 'Brands scaled across 3 countries'],
         ];
         foreach ($stats as $i => $s) {
             Stat::create($s + ['sort' => $i, 'is_active' => true]);
