@@ -53,7 +53,7 @@
             <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
                 @foreach($values as $v)
                     <div class="card">
-                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                             <x-icon :name="$v['icon']" class="h-6 w-6" />
                         </span>
                         <h3 class="mt-5 text-lg">{{ $v['title'] }}</h3>

@@ -21,7 +21,7 @@
                         <blockquote class="mt-4 text-lg leading-relaxed text-ink-700">“{{ $t['quote'] }}”</blockquote>
                     </div>
                     <figcaption class="mt-7 flex items-center gap-3">
-                        <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-flame-500 to-volt-500 font-display font-bold text-white">
+                        <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-volt-400 to-flame-500 font-display font-bold text-ink-950">
                             {{ \Illuminate\Support\Str::of($t['name'])->explode(' ')->map(fn($w) => $w[0])->take(2)->implode('') }}
                         </span>
                         <span>

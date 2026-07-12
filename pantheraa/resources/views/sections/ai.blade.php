@@ -33,7 +33,7 @@
                 <div class="mt-9 grid gap-4 sm:grid-cols-2" data-stagger>
                     @foreach($capabilities as $cap)
                         <div class="flex items-start gap-3">
-                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                                 <x-icon :name="$cap['icon']" class="h-5 w-5" />
                             </span>
                             <div>
@@ -74,7 +74,7 @@
                             <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-700">
                                 Hi! 👋 I'm your AI assistant. How can I help grow your business today?
                             </div>
-                            <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-gradient-to-r from-flame-500 to-volt-500 px-4 py-2.5 text-sm text-white">
+                            <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-gradient-to-r from-volt-400 to-flame-500 px-4 py-2.5 text-sm text-ink-950">
                                 Can you qualify and book leads 24/7?
                             </div>
                             <div class="max-w-[85%] rounded-2xl rounded-tl-sm border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-700">
@@ -91,7 +91,7 @@
                         {{-- Input bar --}}
                         <div class="flex items-center gap-2 border-t border-ink-200 px-4 py-3">
                             <div class="flex-1 rounded-full border border-ink-200 bg-ink-50 px-4 py-2 text-sm text-ink-400">Ask anything…</div>
-                            <span class="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-r from-flame-500 to-volt-500 text-white">
+                            <span class="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-r from-volt-400 to-flame-500 text-ink-950">
                                 <x-icon name="arrow" class="h-4 w-4" />
                             </span>
                         </div>

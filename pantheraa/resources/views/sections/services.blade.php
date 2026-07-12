@@ -18,10 +18,10 @@
                 @php $featured = $service['featured'] ?? false; @endphp
                 <article class="card group {{ $featured ? 'ring-1 ring-flame-500/40 lg:col-span-1' : '' }}" id="card-{{ $service['slug'] }}">
                     @if($featured)
-                        <span class="absolute right-5 top-5 rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Featured</span>
+                        <span class="absolute right-5 top-5 rounded-full bg-gradient-to-r from-volt-400 to-flame-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-ink-950">Featured</span>
                     @endif
                     <div class="flex items-center gap-3">
-                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900 transition-transform duration-500 group-hover:scale-110">
+                        <span class="grid h-12 w-12 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900 transition-transform duration-500 group-hover:scale-110">
                             <x-icon :name="$service['icon']" class="h-6 w-6" />
                         </span>
                         <span class="text-xs font-semibold uppercase tracking-[0.18em] text-steel-600">{{ $service['short'] }}</span>

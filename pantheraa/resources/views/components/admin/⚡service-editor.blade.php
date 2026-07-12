@@ -133,7 +133,7 @@ new class extends Component
             <div>
                 <label class="mb-1.5 block text-sm font-medium text-ink-700">Icon</label>
                 <div class="flex items-center gap-3">
-                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                         <x-icon :name="$icon" class="h-5 w-5" />
                     </span>
                     <select wire:model.live="icon" class="w-full rounded-xl border border-ink-200 bg-ink-50 px-4 py-2.5 text-sm text-ink-900 outline-none focus:border-volt-500">

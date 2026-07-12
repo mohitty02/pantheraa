@@ -76,7 +76,7 @@ new class extends Component
                         <img src="{{ $l->cover_url }}" alt="{{ $l->title }}" loading="lazy"
                              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
                     @else
-                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-flame-600/30 to-volt-600/30">
+                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-volt-400/45 to-flame-500/35">
                             <x-panther class="h-14 w-14 text-ink-700" />
                         </div>
                     @endif

@@ -76,7 +76,7 @@
             <div class="mt-8 grid items-center gap-12 lg:grid-cols-12">
                 <div class="lg:col-span-7">
                     <div class="flex items-center gap-4" data-hero>
-                        <span class="grid h-14 w-14 place-items-center rounded-2xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                        <span class="grid h-14 w-14 place-items-center rounded-2xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                             <x-icon :name="$service['icon']" class="h-7 w-7" />
                         </span>
                         <span class="kicker">{{ $service['short'] }}</span>
@@ -124,7 +124,7 @@
                 <div class="mt-12 grid gap-5 sm:grid-cols-2" data-stagger>
                     @foreach($service['deliverables'] as $d)
                         <article class="card">
-                            <span class="grid h-11 w-11 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                            <span class="grid h-11 w-11 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                                 <x-icon :name="$service['icon']" class="h-5 w-5" />
                             </span>
                             <h3 class="mt-5 text-lg">{{ $d['title'] }}</h3>
@@ -200,7 +200,7 @@
                 @foreach($others as $o)
                     <a href="/services/{{ $o['slug'] }}" wire:navigate class="card group">
                         <div class="flex items-center gap-3">
-                            <span class="grid h-11 w-11 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900 transition-transform duration-500 group-hover:scale-110">
+                            <span class="grid h-11 w-11 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900 transition-transform duration-500 group-hover:scale-110">
                                 <x-icon :name="$o['icon']" class="h-5 w-5" />
                             </span>
                             <h3 class="text-base font-semibold text-ink-900">{{ $o['name'] }}</h3>

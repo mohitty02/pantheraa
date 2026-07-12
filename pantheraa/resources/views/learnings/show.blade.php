@@ -90,9 +90,9 @@
                 <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-500" data-hero>
                     @if($learning->category)
                         @if($learning->categoryModel)
-                            <a href="/learnings/category/{{ $learning->categoryModel->slug }}" wire:navigate class="rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-3 py-1 text-xs font-semibold text-white">{{ $learning->category }}</a>
+                            <a href="/learnings/category/{{ $learning->categoryModel->slug }}" wire:navigate class="rounded-full bg-gradient-to-r from-volt-400 to-flame-500 px-3 py-1 text-xs font-semibold text-ink-950">{{ $learning->category }}</a>
                         @else
-                            <span class="rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-3 py-1 text-xs font-semibold text-white">{{ $learning->category }}</span>
+                            <span class="rounded-full bg-gradient-to-r from-volt-400 to-flame-500 px-3 py-1 text-xs font-semibold text-ink-950">{{ $learning->category }}</span>
                         @endif
                     @endif
                     @if($authorName)
@@ -180,7 +180,7 @@
                                     @if($r->cover_url)
                                         <img src="{{ $r->cover_url }}" alt="{{ $r->title }}" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
                                     @else
-                                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-flame-600/30 to-volt-600/30"><x-panther class="h-12 w-12 text-ink-700" /></div>
+                                        <div class="grid h-full w-full place-items-center bg-gradient-to-br from-volt-400/45 to-flame-500/35"><x-panther class="h-12 w-12 text-ink-700" /></div>
                                     @endif
                                 </div>
                                 <div class="p-5">

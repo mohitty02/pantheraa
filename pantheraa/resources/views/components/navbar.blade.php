@@ -38,14 +38,14 @@
                             @foreach($services as $service)
                                 <a href="/services/{{ $service['slug'] }}" wire:navigate
                                    class="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-ink-100">
-                                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900 transition-transform duration-300 group-hover/item:scale-110">
+                                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900 transition-transform duration-300 group-hover/item:scale-110">
                                         <x-icon :name="$service['icon']" class="h-5 w-5" />
                                     </span>
                                     <span class="min-w-0">
                                         <span class="flex items-center gap-2">
                                             <span class="text-sm font-semibold text-ink-900">{{ $service['name'] }}</span>
                                             @if($service['featured'] ?? false)
-                                                <span class="rounded-full bg-gradient-to-r from-flame-500 to-volt-500 px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-white">New</span>
+                                                <span class="rounded-full bg-gradient-to-r from-volt-400 to-flame-500 px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-ink-950">New</span>
                                             @endif
                                         </span>
                                         <span class="mt-0.5 block truncate text-xs text-ink-400">{{ $service['tagline'] }}</span>
@@ -105,7 +105,7 @@
                         @foreach($services as $service)
                             <a href="/services/{{ $service['slug'] }}" wire:navigate @click="open = false"
                                class="flex items-center gap-3 py-2.5 pl-2 text-sm text-ink-600">
-                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                                     <x-icon :name="$service['icon']" class="h-4 w-4" />
                                 </span>
                                 {{ $service['name'] }}

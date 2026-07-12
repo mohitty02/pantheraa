@@ -67,7 +67,7 @@ new class extends Component
                     <tr class="hover:bg-ink-50" wire:key="svc-{{ $s->id }}">
                         <td class="px-4 py-3">
                             <div class="flex items-center gap-2.5">
-                                <span class="grid h-8 w-8 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                                <span class="grid h-8 w-8 place-items-center rounded-lg border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                                     <x-icon :name="$s->icon" class="h-4 w-4" />
                                 </span>
                                 <a href="/admin/services/{{ $s->id }}/edit" class="font-medium text-ink-900 hover:text-volt-600">{{ $s->name }}</a>

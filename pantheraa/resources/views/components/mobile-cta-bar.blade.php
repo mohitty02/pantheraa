@@ -24,7 +24,7 @@
             </a>
 
             <a href="/contact" wire:navigate
-               class="flex flex-col items-center justify-center gap-1 bg-gradient-to-r from-flame-500 to-volt-500 py-3 text-white">
+               class="flex flex-col items-center justify-center gap-1 bg-gradient-to-r from-volt-400 to-flame-500 py-3 text-ink-950">
                 <x-icon name="bolt" class="h-5 w-5" />
                 <span class="text-[11px] font-semibold">Free audit</span>
             </a>

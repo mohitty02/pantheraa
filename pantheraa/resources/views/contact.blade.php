@@ -54,7 +54,7 @@
                     <div class="space-y-4">
                         @foreach($details as $d)
                             <div class="card flex items-center gap-4">
-                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-flame-500/20 to-volt-500/20 text-ink-900">
+                                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-ink-200 bg-gradient-to-br from-volt-400/35 to-flame-500/25 text-ink-900">
                                     <x-icon :name="$d['icon']" class="h-6 w-6" />
                                 </span>
                                 <div>

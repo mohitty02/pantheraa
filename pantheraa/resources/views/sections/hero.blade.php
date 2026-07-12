@@ -57,7 +57,7 @@
             <div class="lg:col-span-5" data-hero>
                 <div class="relative mx-auto max-w-md">
                     {{-- glow rings --}}
-                    <div class="absolute inset-0 -z-10 animate-pulse rounded-3xl bg-gradient-to-br from-flame-600/20 to-volt-600/20 blur-2xl"></div>
+                    <div class="absolute inset-0 -z-10 animate-pulse rounded-3xl bg-gradient-to-br from-volt-500/30 to-flame-500/25 blur-2xl"></div>
 
                     <div class="card overflow-hidden p-8">
                         {{-- Big dual-eye mark --}}
@@ -68,14 +68,15 @@
                             <x-panther class="h-24 w-24 text-ink-900" />
                         </div>
 
+                        {{-- Real numbers only — these are backed by the screenshots on /portfolio --}}
                         <div class="mt-6 grid grid-cols-2 gap-3">
                             <div class="rounded-xl border border-ink-200 bg-ink-50 p-4">
-                                <div class="font-display text-3xl font-bold text-ink-900"><span data-counter="4.8">4.8</span>x</div>
-                                <div class="mt-1 text-xs text-ink-500">Average ROAS</div>
+                                <div class="font-display text-3xl font-bold text-ink-900"><span data-counter="400">400</span>+</div>
+                                <div class="mt-1 text-xs text-ink-500">Websites built</div>
                             </div>
                             <div class="rounded-xl border border-ink-200 bg-ink-50 p-4">
-                                <div class="font-display text-3xl font-bold text-ink-900"><span data-counter="320">320</span>+</div>
-                                <div class="mt-1 text-xs text-ink-500">Campaigns</div>
+                                <div class="font-display text-3xl font-bold text-ink-900"><span data-counter="16">16</span>M+</div>
+                                <div class="mt-1 text-xs text-ink-500">Search impressions</div>
                             </div>
                         </div>
 

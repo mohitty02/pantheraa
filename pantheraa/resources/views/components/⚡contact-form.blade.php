@@ -60,7 +60,7 @@ new class extends Component
 <div class="relative">
     @if ($sent)
         <div data-reveal class="card flex flex-col items-center gap-4 py-14 text-center" role="status">
-            <span class="grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-flame-500 to-volt-500 text-white">
+            <span class="grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-volt-400 to-flame-500 text-ink-950">
                 <x-icon name="check" class="h-8 w-8" />
             </span>
             <h3 class="text-2xl">Message received. 🐾</h3>

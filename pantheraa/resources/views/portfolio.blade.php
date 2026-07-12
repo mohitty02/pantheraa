@@ -96,7 +96,7 @@
                             <h2 class="mt-5 text-lg text-ink-900">{{ $c['client'] }}</h2>
                             <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{{ $c['desc'] ?? '' }}</p>
 
-                            <div class="mt-6 h-px w-full bg-gradient-to-r from-flame-500/40 via-volt-500/40 to-transparent transition-all duration-500 group-hover:from-flame-500 group-hover:via-volt-500"></div>
+                            <div class="mt-6 h-px w-full bg-gradient-to-r from-volt-400/50 via-flame-500/40 to-transparent transition-all duration-500 group-hover:from-volt-400 group-hover:via-flame-500"></div>
                         </article>
                     @endforeach
                 </div>
