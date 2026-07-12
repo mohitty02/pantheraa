@@ -14,7 +14,9 @@ class MarketingSiteTest extends TestCase
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('measurable growth', false)
+            ->assertSee('get you customers', false)                          // hero H1
+            ->assertSee('Digital Marketing Agency in India', false)          // SEO title
+            ->assertSee('wa.me/', false)                                     // WhatsApp lead CTA
             ->assertSee('"@type":"Organization"', false)
             ->assertSee('"@type":"FAQPage"', false);
     }

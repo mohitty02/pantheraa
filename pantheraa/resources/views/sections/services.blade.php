@@ -5,11 +5,11 @@
         <div class="mx-auto max-w-2xl text-center" data-reveal>
             <span class="kicker">What we do</span>
             <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl">
-                One pack. <span class="text-gradient-flame">Every growth channel.</span>
+                Everything you need to <span class="text-gradient-flame">grow online.</span>
             </h2>
             <p class="mt-4 text-ink-500">
-                Search, AI-search, app stores, paid media and conversion — orchestrated so each channel
-                makes the others stronger.
+                Website &amp; software development, Google and Meta Ads, SEO, Google Business Profile
+                and AI search optimization — under one roof, working together.
             </p>
         </div>
 

@@ -111,6 +111,8 @@
 
     <x-footer />
 
+    <x-whatsapp-cta />
+
     @livewireScripts
 </body>
 </html>

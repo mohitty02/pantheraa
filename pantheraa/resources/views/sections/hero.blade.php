@@ -13,28 +13,30 @@
             <div class="lg:col-span-7">
                 <span class="kicker" data-hero>
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-flame-500"></span>
-                    Digital Panther · Growth Agency
+                    Digital Agency · India
                 </span>
 
                 <h1 class="mt-6 text-4xl font-bold leading-[1.04] sm:text-6xl lg:text-7xl" data-hero>
-                    We hunt
-                    <span class="text-gradient">measurable growth</span>
-                    for ambitious brands.
+                    We build websites, run ads &amp;
+                    <span class="text-gradient">get you customers.</span>
                 </h1>
 
                 <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-600" data-hero>
-                    {{ $s['name'] }} engineers SEO, AI-search (AEO &amp; GEO), ASO and paid media —
-                    and builds the <span class="font-semibold text-ink-900">AI chatbots &amp; agents</span>
-                    that run your growth on autopilot. Measured in revenue, not vanity clicks.
+                    {{ $s['name'] }} is a digital marketing &amp; development agency in India.
+                    <span class="font-semibold text-ink-900">Website &amp; software development, Google &amp; Meta Ads,
+                    SEO, Google Business Profile and AI search optimization (AIO)</span> — all measured
+                    in leads and revenue, not vanity clicks.
                 </p>
 
                 <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center" data-hero>
                     <a href="/contact" wire:navigate class="btn-primary" data-magnetic>
-                        Get a free growth audit
+                        Get a free audit
                         <x-icon name="arrow" class="h-4 w-4" />
                     </a>
-                    <a href="/services" wire:navigate class="btn-ghost">
-                        Explore services
+                    <a href="https://wa.me/{{ ltrim(preg_replace('/\D/', '', config('site.phone_link')), '+') }}?text={{ urlencode('Hi Pantheraa Space, I need help with my website / ads / SEO.') }}"
+                       target="_blank" rel="noopener" class="btn-ghost">
+                        <x-icon name="chat" class="h-4 w-4" />
+                        WhatsApp us
                     </a>
                 </div>
 

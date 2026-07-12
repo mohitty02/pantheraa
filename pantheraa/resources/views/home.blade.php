@@ -31,7 +31,11 @@
     $pageSchema = [$faqSchema, $servicesSchema];
 @endphp
 
-<x-app-layout :schema="$pageSchema">
+<x-app-layout
+    title="Digital Marketing Agency in India — Website Development, Ads, SEO & AIO"
+    description="Pantheraa Space is a digital marketing & development agency in India. Website and software development, Google & Meta Ads, SEO, Google Business Profile (GMB) and AI search optimization (AIO). Get a free audit."
+    :schema="$pageSchema"
+>
     @include('sections.hero')
     @include('sections.stats')
     @include('sections.services')
